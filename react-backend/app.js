@@ -9,6 +9,35 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// //This creates a connection to a local db
+const mysql = require('mysql');
+
+const con = mysql.createConnection({
+  host: "localhost",
+  //host: '127.0.0.1',
+  user: "root",
+  password: "runfast433",
+  //database: "test",
+  //port: '8889'
+
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
+//This code did not work, so scrapping
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+//   let sql = `CREATE DATABASE nodemysql`;
+//   con.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log("The Database is created!!");
+//   });
+// });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -40,23 +69,26 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
+
+
 //set up to connect to amazon rds db 
-var mysql = require('mysql');
+//going to comment out for now in order to install normal mySQL
+// var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-  host     : process.env.RDS_HOSTNAME,
-  user     : process.env.RDS_USERNAME,
-  password : process.env.RDS_PASSWORD,
-  port     : process.env.RDS_PORT
-});
+// var connection = mysql.createConnection({
+//   host     : process.env.RDS_HOSTNAME,
+//   user     : process.env.RDS_USERNAME,
+//   password : process.env.RDS_PASSWORD,
+//   port     : process.env.RDS_PORT
+// });
 
-connection.connect(function(err) {
-  if (err) {
-    console.error('Database connection failed: ' + err.stack);
-    return;
-  }
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error('Database connection failed: ' + err.stack);
+//     return;
+//   }
 
-  console.log('Connected to database.');
-});
+//   console.log('Connected to database.');
+// });
 
-connection.end();
+// connection.end();
