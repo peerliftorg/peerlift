@@ -3,11 +3,17 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//adding cors to prevent error when using api
+var cors = require('cors');
+var app = express();
+//using cors before setting up routes
+app.use(cors());
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
 
 // //This creates a connection to a local db
 const mysql = require('mysql');

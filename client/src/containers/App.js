@@ -6,27 +6,36 @@ import OppBox from '../components/OppBox';
 
 
 class App extends Component {
+  //Users stands for state, the object waiting to get rendered
   state = {users: []}
+  //Fetch json from express backend
   componentDidMount() {
-    fetch('/users')
+    //decide what link to use here-- doesnt matter yet-- believe this is right
+    fetch('http://localhost:9000/user')
       .then(res => res.json())
-      .then(users => this.setState({ users }));
+      //.then(users => this.setState({ users }));
+      .then((data) => {
+        this.setState({ contacts: data })
+        //appears this works, leaving to test
+        console.log(data);
+
+      })
   }
   render() {
   return (
 
     <div className = 'wrapper'> 
-        {/* <MyNavbar> </MyNavbar>
+         <MyNavbar contacts={this.state.contacts}> </MyNavbar>
         <AddOpp></AddOpp>
-        <OppBox></OppBox> */}
+        <OppBox></OppBox> 
+    
+   
         
-        {this.state.users.map(user =>
-          <div key={user.id}>{user.username}</div>
-          )}
+       
         </div>
+       
     
   );
 }
 }
-
 export default App;
