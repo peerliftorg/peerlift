@@ -6,8 +6,18 @@ import OppBox from '../components/OppBox';
 
 
 class App extends Component {
+
+  //adding constructor from tut
+  constructor(props){
+    super(props);
+    //now assign state, and a default value, doesnt matter if i say data
+    this.state = {
+      contacts: []
+    };
+  }
   //Users stands for state, the object waiting to get rendered
-  state = {users: []}
+  //state = {contacts: []}
+  
   //Fetch json from express backend
   componentDidMount() {
     //decide what link to use here-- doesnt matter yet-- believe this is right
@@ -16,21 +26,20 @@ class App extends Component {
       //.then(users => this.setState({ users }));
       .then((data) => {
         this.setState({ contacts: data })
-        //appears this works, leaving to test
-        console.log(data);
-
+        //data is storing correct
+        console.log(this.state.contacts)
       })
+      .catch(console.log)
+
   }
   render() {
   return (
 
     <div className = 'wrapper'> 
-         <MyNavbar contacts={this.state.contacts}> </MyNavbar>
+         <MyNavbar> </MyNavbar>
+
         <AddOpp></AddOpp>
-        <OppBox></OppBox> 
-    
-   
-        
+        <OppBox contacts={this.state.contacts}> </OppBox> 
        
         </div>
        
