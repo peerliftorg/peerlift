@@ -16,9 +16,9 @@ class App extends Component {
   return (
 
     <div className = 'wrapper'> 
-        <MyNavbar> </MyNavbar>
+        {/* <MyNavbar> </MyNavbar>
         <AddOpp></AddOpp>
-        <OppBox></OppBox>
+        <OppBox></OppBox> */}
         
         {this.state.users.map(user =>
           <div key={user.id}>{user.username}</div>

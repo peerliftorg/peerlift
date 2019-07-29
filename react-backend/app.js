@@ -12,31 +12,65 @@ var app = express();
 // //This creates a connection to a local db
 const mysql = require('mysql');
 
-const con = mysql.createConnection({
-  host: "localhost",
-  //host: '127.0.0.1',
-  user: "root",
-  password: "runfast433",
-  //database: "test",
-  //port: '8889'
+//connect to users from tutorial
+app.get('/user/', (req, res) => {
+  console.log("Fetching user data ")
 
-});
+  const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'runfast433',
+    database: 'nodemysql'
+  })
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+  //const userId = req.params.id
+  const queryString = "SELECT * FROM test"
+  connection.query(queryString, (err, rows, fields) => {
+    if (err) {
+      console.log("Failed to query for users: " + err)
+      res.sendStatus(500)
+      return
+      // throw err
+    }
 
-//This code did not work, so scrapping
+    console.log("I think we fetched users successfully")
+
+    const users = rows.map((row) => {
+      return {firstName: row.title, lastName: row.deadline}
+    })
+
+    res.json(users)
+  })
+
+  // res.end()
+})
+
+
+// const con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "runfast433",
+//   database: "nodemysql"
+
+
+// });
+
 // con.connect(function(err) {
 //   if (err) throw err;
 //   console.log("Connected!");
-//   let sql = `CREATE DATABASE nodemysql`;
-//   con.query(sql, function (err, result) {
-//     if (err) throw err;
-//     console.log("The Database is created!!");
-//   });
 // });
+
+
+
+
+
+
+
+//create a mySQL pool 
+//const pool = mysql.createPool(con);
+//Export this pool so app can use
+//module.exports = pool;
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
