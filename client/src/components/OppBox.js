@@ -37,14 +37,14 @@ const OppBox = ({ contacts }) => {
       {contacts.map((contact) =>
       //wrapper so it doesnt break
       <div className = "OppBoxWrapper">
-      <div className = 'Title'> {contact.firstName}</div>
+      <div className = 'Title'> {contact.title}</div>
 
       <div className = 'Tags'> 
               <div className = 'Data' id = 'Amount'>$25,000</div>
               <div className = 'Data' id = 'Grade'>11,12</div>
       </div>
 
-      <div className = 'Deadline'>January 15, 2019</div>
+      <div className = 'Deadline'>{contact.deadline}</div>
       <div className = 'Text'> Coca-Cola Scholars is a prestigious four-year grant of $ </div>
 
 

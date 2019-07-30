@@ -22,6 +22,7 @@ const mysql = require('mysql');
 app.get('/user/', (req, res) => {
   console.log("Fetching user data ")
 
+  //auth info to connect to a local db
   const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -29,7 +30,30 @@ app.get('/user/', (req, res) => {
     database: 'nodemysql'
   })
 
+  // //auth info to connect to aws rds, not yet working
+  // const connection = mysql.createConnection({
+  //   host: 'peerlift.cwp44tiqr9lo.us-east-2.rds.amazonaws.com',
+  //   port: '3306',
+  //   user: 'peerl_root',
+  //   password: 'peerliftDB2017!',
+  //   database: 'peerlift_db2'
+
+  // })
+
+  connection.connect(function(err){
+
+    if(!err) {
+        console.log("Database is connected ... ");    
+    } else {
+        console.log("Error connecting database ... " + err);    
+    }
+    });
+  
+
   //const userId = req.params.id
+
+
+  //code to query local db
   const queryString = "SELECT * FROM test"
   connection.query(queryString, (err, rows, fields) => {
     if (err) {
@@ -42,13 +66,13 @@ app.get('/user/', (req, res) => {
     console.log("I think we fetched users successfully")
 
     const users = rows.map((row) => {
-      return {firstName: row.title, lastName: row.deadline}
+      return {title: row.title, deadline: row.deadline}
     })
 
     res.json(users)
   })
 
-  // res.end()
+   //res.end()
 })
 
 

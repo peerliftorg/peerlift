@@ -3,6 +3,9 @@ import '../containers/App.css';
 import MyNavbar from '../components/nav.js';
 import AddOpp from '../components/addOpp.js';
 import OppBox from '../components/OppBox';
+import Footer from "../components/footer";
+import Filters from "../components/filters";
+
 
 
 class App extends Component {
@@ -36,10 +39,17 @@ class App extends Component {
   return (
 
     <div className = 'wrapper'> 
-         <MyNavbar> </MyNavbar>
 
+         <MyNavbar> </MyNavbar>
+        <div className = "filter-opp-wrapper">
+        <Filters></Filters>
         <AddOpp></AddOpp>
+        <div className = "opp-box-wrapper"> 
         <OppBox contacts={this.state.contacts}> </OppBox> 
+        </div>
+        </div>
+
+        <Footer></Footer>
        
         </div>
        
