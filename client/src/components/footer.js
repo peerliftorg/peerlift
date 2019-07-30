@@ -5,7 +5,15 @@ class Footer extends Component{
     render() {
         return (
         <div className = "Footer">
-        <h1>This is a footer</h1>
+        <div className = "footer-content">Scholarships</div>
+        <div className = "footer-content">Summer Programs </div>
+        <div className = "footer-content">Resources</div>
+        <div className = "footer-content">Who we Are</div>
+
+        <div className = "footer-bottom-text">Built with ❤️ and scholarship 💰 </div>
+
+
+
         </div>
         );
     }
