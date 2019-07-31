@@ -23,12 +23,12 @@ app.get('/user/', (req, res) => {
   console.log("Fetching user data ")
 
   //auth info to connect to a local db
-  const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'runfast433',
-    database: 'nodemysql'
-  })
+  // const connection = mysql.createConnection({
+  //   host: 'localhost',
+  //   user: 'root',
+  //   password: 'runfast433',
+  //   database: 'sys'
+  // })
 
   // //auth info to connect to aws rds, not yet working
   // const connection = mysql.createConnection({
@@ -39,6 +39,30 @@ app.get('/user/', (req, res) => {
   //   database: 'peerlift_db2'
 
   // })
+
+  //with new db
+  const connection = mysql.createConnection({
+    host: 'aacjik3kzvv0hg.cwp44tiqr9lo.us-east-2.rds.amazonaws.com',
+    port: '3306',
+    user: 'plconnect',
+    password: 'atheno75!',
+    database: 'ebdb'
+  });
+
+
+//set up to connect to amazon rds db 
+// var mysql = require('mysql');
+
+// var connection = mysql.createConnection({
+//   host     : process.env.RDS_HOSTNAME,
+//   user     : process.env.RDS_USERNAME,
+//   password : process.env.RDS_PASSWORD,
+//   port     : process.env.RDS_PORT,
+//   //socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
+
+// });
+
+
 
   connection.connect(function(err){
 
@@ -134,17 +158,6 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 
-
-//set up to connect to amazon rds db 
-//going to comment out for now in order to install normal mySQL
-// var mysql = require('mysql');
-
-// var connection = mysql.createConnection({
-//   host     : process.env.RDS_HOSTNAME,
-//   user     : process.env.RDS_USERNAME,
-//   password : process.env.RDS_PASSWORD,
-//   port     : process.env.RDS_PORT
-// });
 
 // connection.connect(function(err) {
 //   if (err) {
