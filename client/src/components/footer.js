@@ -9,20 +9,27 @@ class Footer extends Component{
         <div className = "Footer-wrapper">
 
         <div className = "Content-wrapper">
-        <img className = 'rocket' src={rocket} alt=""></img>
+            <img className = 'rocket' src={rocket} alt=""></img>
 
+            <div className = "Text-wrapper"> 
 
-        <div className = "Footer-content">Scholarships</div>
-        <div className = "Footer-content">Summer Programs </div>
-        <div className = "Footer-content">Resources</div>
-        <div className = "Footer-content">Who we Are</div>
+                <div className = "Cat-one"> 
+                    <div className = "Footer-content" id = "Scholarships">Scholarships</div>
+                    <div className = "Footer-content" id = "SummerPrograms">Summer Programs </div>
+                </div>
+
+                <div className = "Cat-two"> 
+                    <div className = "Footer-content" id = "Resources">Resources</div>
+                    <div className = "Footer-content" id = "Who">Who We Are</div>
+                </div>
+            </div>
+
         </div>
 
-        <div className = "Footer-bottom-text">Built with ❤️ and scholarship 💰 </div>
-        <div className = "Footer-bottom-contact">contact@peerlift.org </div>
-
-
-
+        <div className = "Footer-bottom-wrapper"> 
+            <div className = "Footer-bottom-text">Built with ❤️ and scholarship 💰 </div>
+            <div className = "Footer-bottom-contact">contact@peerlift.org </div>
+        </div>
 
         </div>
         );
