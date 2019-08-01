@@ -9,9 +9,12 @@ var app = express();
 //using cors before setting up routes
 app.use(cors());
 
-
+//Set up my routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+//Forward traffic to usersRouter
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 //Successful connect of classic Mongo DB
 // const MongoClient = require('mongodb').MongoClient;
@@ -32,7 +35,7 @@ var usersRouter = require('./routes/users');
 // });
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/scholarships?retryWrites=true&w=majority')
   .then(() => {
     console.log('Successfully connected to MongoDB Atlas!');
   })
@@ -48,48 +51,6 @@ mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/t
 //connect to users from tutorial
 // app.get('/user/', (req, res) => {
 //   console.log("Fetching user data ")
-
-//   //auth info to connect to a local db
-//   const connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'PASSWORD',
-//     database: 'pl_connect'
-//   })
-
-  // //auth info to connect to aws rds, not yet working
-  // const connection = mysql.createConnection({
-  //   host: 'peerlift.cwp44tiqr9lo.us-east-2.rds.amazonaws.com',
-  //   port: '3306',
-  //   user: 'peerl_root',
-  //   password: 'peerliftDB2017!',
-  //   database: 'peerlift_db2'
-
-  // })
-
-  //with new db
-  // const connection = mysql.createConnection({
-  //   host: 'aacjik3kzvv0hg.cwp44tiqr9lo.us-east-2.rds.amazonaws.com',
-  //   port: '3306',
-  //   user: 'plconnect',
-  //   password: 'atheno75!',
-  //   database: 'ebdb'
-  // });
-
-
-//set up to connect to amazon rds db 
-// var mysql = require('mysql');
-
-// var connection = mysql.createConnection({
-//   host     : process.env.RDS_HOSTNAME,
-//   user     : process.env.RDS_USERNAME,
-//   password : process.env.RDS_PASSWORD,
-//   port     : process.env.RDS_PORT,
-  
-//   //socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock'
-
-// });
-
 
 
 //   connection.connect(function(err){
@@ -128,11 +89,6 @@ mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/t
 // })
 
 
-// const con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "runfast433",
-//   database: "nodemysql"
 
 
 // });
@@ -141,17 +97,6 @@ mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/t
 //   if (err) throw err;
 //   console.log("Connected!");
 // });
-
-
-
-
-
-
-
-//create a mySQL pool 
-//const pool = mysql.createPool(con);
-//Export this pool so app can use
-//module.exports = pool;
 
 
 // view engine setup
@@ -164,8 +109,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
