@@ -24,7 +24,7 @@ class App extends Component {
   //Fetch json from express backend
   componentDidMount() {
     //decide what link to use here-- doesnt matter yet-- believe this is right
-    fetch('http://localhost:9000/user')
+    fetch('http://localhost:9000/users')
       .then(res => res.json())
       //.then(users => this.setState({ users }));
       .then((data) => {
