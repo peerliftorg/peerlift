@@ -12,6 +12,8 @@ const oppSchema = mongoose.Schema({
     Grade: String,
     FilterDate: String
 
-});
+},
+{collection: 'scholarships'}
+);
 
 module.exports = mongoose.model('Opp',oppSchema);

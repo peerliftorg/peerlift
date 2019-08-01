@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 /* GET users listing. */
 //find all users
 router.get('/', (req, res, next) => {
-  db.collection('scholarships').find()
+  Opp.find()
     .exec()
     .then(doc => {
       console.log(doc);

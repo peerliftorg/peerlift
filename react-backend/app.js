@@ -35,7 +35,7 @@ app.use('/users', usersRouter);
 // });
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/scholarships?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/peerlift?retryWrites=true&w=majority')
   .then(() => {
     console.log('Successfully connected to MongoDB Atlas!');
   })
@@ -44,7 +44,7 @@ mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/s
     console.error(error);
   });
 
-
+ 
 // //This creates a connection to a local db
 //const mysql = require('mysql');
 
