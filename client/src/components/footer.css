@@ -1,0 +1,14 @@
+.Footer{
+    border-top-style: solid;
+    border-top-color: #f7f7f7;
+}
+
+.rocket{
+    width: 3vw;
+    height: 7.2vh;
+}
+
+.Content-wrapper{
+    display: flex;
+    flex-direction: row;
+}

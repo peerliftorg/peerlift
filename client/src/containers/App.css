@@ -1,0 +1,12 @@
+
+.wrapper{
+}
+.opp-box-wrapper{
+    background-color: #f7f7f7;
+    padding: 5em;
+}
+
+.filter-opp-wrapper{
+    direction: flex;
+    flex-direction: row;
+}

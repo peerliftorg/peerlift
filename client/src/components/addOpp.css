@@ -1,0 +1,27 @@
+.FormContainer{
+    justify-self: center;
+
+}
+
+
+.OppText{
+    font-weight: 800;
+
+    font-size: 18px;
+}
+
+.FormInput{
+    border: 0px;
+    font-size: 20px;
+    color: #8e8e8e;
+    outline:none;
+    }
+
+
+.FormButton{
+    border: 0px;
+    color: #1493ff;
+    font-size: 20px;
+
+
+}

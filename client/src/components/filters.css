@@ -1,0 +1,36 @@
+.filter-button{
+    width: 3.8vw;
+    height: 3.8vh;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+    outline:none;
+    border: 0px;
+    margin-right: 0.2em;
+}
+.filter-wrapper{
+
+}
+.header{
+    font-size: 33px;
+    font-weight: 800;
+    border-bottom-style: solid;
+    border-width: 2px;
+    margin-bottom: 2em;
+}
+
+.title{
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+}
+
+.tags{
+    display: flex;
+    flex-direction: column;
+}
+
+#tag{
+    margin-bottom: 2em;
+}

@@ -1,0 +1,30 @@
+.logo{
+    width: 9m;
+    height: 2.5em;
+    float: left;
+    padding-left: 2vh;
+
+}
+
+.Navbar{
+    padding-top: 4vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+#nav {
+    width: 100%;
+    margin: 0 0 3em 0;
+    padding: 0;
+    list-style: none; }
+#nav li {
+    float: right; }
+
+    #nav li a {
+            display: block;
+            padding: 8px 1.5vw;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            color: black;
+    }

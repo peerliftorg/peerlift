@@ -1,0 +1,77 @@
+.OppBoxWrapper{
+  width: 42vw;
+  height: 27vh;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px 0 rgba(173, 173, 173, 0.5);
+  background-color: #ffffff;
+  padding: 1.5em;
+  margin-bottom: 2em;
+  /* margin: 30vh; */
+}
+
+.Title{
+    font-weight: 800;
+    font-size: 26px;
+    padding-top: 2vh;
+
+}
+
+.Tags{
+    display: flex;
+    padding-top: 1.5vh;
+    
+    
+
+
+}
+
+.Data{
+    
+    border-radius: 6px;
+    opacity: 0.3;
+    font-size: 20px;
+    
+
+
+}
+
+#Amount{
+  background-color: #ff6d96;
+  margin-right: 2vw;
+
+}
+
+#Grade{
+background-color: #eaba04;
+
+}
+
+.Deadline{
+color: #686868;
+font-size: 18px;
+padding-top: 1.5vh;
+
+
+}
+
+.Text{
+padding-top: 1.5vh;
+
+color: #686868;
+font-size: 16px;
+
+
+}
+
+.Cta{
+padding-top: 1vh;
+
+display: flex;
+font-size: 22px;
+
+}
+
+.Share{
+margin-right: 28vw;
+
+}
