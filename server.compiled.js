@@ -12,12 +12,6 @@ app.use(_express["default"]["static"](_path["default"].join(__dirname, 'client',
 app.get('/', function (req, res) {
   res.send('just gonna send it');
 });
-app.get('/flower', function (req, res) {
-  res.json({
-    name: 'Dandelion',
-    colour: 'Blue-ish'
-  });
-});
 app.listen(PORT, function () {
   console.log("Server listening at port ".concat(PORT, "."));
 });

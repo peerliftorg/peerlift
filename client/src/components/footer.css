@@ -8,7 +8,45 @@
     height: 7.2vh;
 }
 
+.Footer-wrapper{
+    margin: 4em;
+}
+
 .Content-wrapper{
     display: flex;
     flex-direction: row;
+}
+
+.Text-wrapper{
+display: flex;
+flex-direction: row;
+margin-left: 2em;
+}
+
+.Footer-content{
+font-size: 18px;
+
+font-weight: 800;
+}
+
+.Cat-two{
+margin-left: 2em;
+
+}
+
+#Scholarships{
+    margin-bottom: 0.6em;
+}
+
+#Resources{
+    margin-bottom: 0.6em;
+
+}
+
+.Footer-bottom-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    font-size: 16px;
+
 }

@@ -24,7 +24,7 @@ class App extends Component {
   //Fetch json from express backend
   componentDidMount() {
     //decide what link to use here-- doesnt matter yet-- believe this is right
-    fetch('http://localhost:4001/user')
+    fetch('http://localhost:9000/users')
       .then(res => res.json())
       //.then(users => this.setState({ users }));
       .then((data) => {
@@ -40,20 +40,22 @@ class App extends Component {
 
     <div className = 'wrapper'> 
 
-         <MyNavbar> </MyNavbar>
+        <MyNavbar> </MyNavbar>
         <div className = "filter-opp-wrapper">
-        <Filters></Filters>
-        <AddOpp></AddOpp>
-        <div className = "opp-box-wrapper"> 
-        <OppBox contacts={this.state.contacts}> </OppBox> 
-        </div>
-        </div>
 
-        <Footer></Footer>
-       
+          <div className = "full-filter-wrapper"> 
+          <Filters></Filters>
+          </div>
+
+          <div className = "add-box-wrapper"> 
+          <AddOpp></AddOpp>
+          <div className = "opp-box-wrapper"> 
+            <OppBox contacts={this.state.contacts}> </OppBox> 
         </div>
-       
-    
+        </div>
+        </div>
+        <Footer></Footer>
+      </div>
   );
 }
 }

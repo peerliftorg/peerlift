@@ -18,10 +18,10 @@ class Filters extends Component{
 
         <div className = "title"> Tags</div>
         <div className = "tags"> 
-        <FilterButton id = "tag"></FilterButton>
-        <FilterButton id ="tag"></FilterButton>
-        <FilterButton id ="tag"></FilterButton>
-        <FilterButton id ="tag"></FilterButton>
+        <FilterButton ></FilterButton>
+        <FilterButton ></FilterButton>
+        <FilterButton ></FilterButton>
+        <FilterButton ></FilterButton>
         </div>
         </div>
         );
