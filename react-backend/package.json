@@ -6,6 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "firebase": "^5.0.1",
+    "firebase-admin": "^5.12.0",
     "aws-sdk": "latest",
     "body-parser": "latest",
     "cookie-parser": "~1.4.4",

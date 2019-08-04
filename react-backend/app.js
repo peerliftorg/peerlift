@@ -1,5 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
+//rec firebase and real time
+var firebase = require('firebase');
+var realTime = require("firebase/database");
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -16,33 +20,22 @@ var usersRouter = require('./routes/users');
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-//Successful connect of classic Mongo DB
-// const MongoClient = require('mongodb').MongoClient;
-// const ObjectId = require("mongodb").ObjectID;
+//init firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyAhZL_8_AUsyUCuCo4YO5_cewHHtCVbWo4",
+  authDomain: "pl-connect-c80d6.firebaseapp.com",
+  databaseURL: "https://pl-connect-c80d6.firebaseio.com",
+  projectId: "pl-connect-c80d6",
+  storageBucket: "",
+  messagingSenderId: "410121798989",
+  appId: "1:410121798989:web:94dfadb890cc6005"
+};
+firebase.initializeApp(firebaseConfig);
 
-// const uri = "mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   //does not show if db is correct yet
-//   const collection = client.db("sample_airbnb").collection("listingAndReviews");
-//   if(err) {
-//     console.log('The database is off chief');
-// }
-// console.log('The database works chief');
 
-//   // perform actions on the collection object
-//   client.close();
-// });
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/peerlift?retryWrites=true&w=majority')
-  .then(() => {
-    console.log('Successfully connected to MongoDB Atlas!');
-  })
-  .catch((error) => {
-    console.log('Unable to connect to MongoDB Atlas!');
-    console.error(error);
-  });
+//ccoment out cry
+
 
  
 // //This creates a connection to a local db
@@ -66,15 +59,6 @@ mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/p
 //   //const userId = req.params.id
 
 
-//   //code to query local db
-//   const queryString = "SELECT * FROM scholarships"
-//   connection.query(queryString, (err, rows, fields) => {
-//     if (err) {
-//       console.log("Failed to query for users: " + err)
-//       res.sendStatus(500)
-//       return
-//       // throw err
-//     }
 
 //     console.log("I think we fetched users successfully")
 
