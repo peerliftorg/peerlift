@@ -19,6 +19,7 @@
 .Tags{
     display: flex;
     padding-top: 1.5vh;
+    font-weight: 800px;
     
     
 
@@ -26,23 +27,26 @@
 }
 
 .Data{
-    
     border-radius: 6px;
-    opacity: 0.3;
     font-size: 20px;
     
-
-
 }
 
 #Amount{
-  background-color: #ff6d96;
+  background-color: rgb(255,109,150,0.3);
   margin-right: 2vw;
+  color: #ff6d96;
+
+
 
 }
 
 #Grade{
-background-color: #eaba04;
+background-color: rgb(234,186,4,0.3);
+
+
+color: #eaba04;
+
 
 }
 
@@ -52,6 +56,9 @@ font-size: 18px;
 padding-top: 1.5vh;
 
 
+}
+
+.Tags{
 }
 
 .Text{
