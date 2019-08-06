@@ -6,10 +6,7 @@ import OppBox from '../components/OppBox';
 import Footer from "../components/footer";
 import Filters from "../components/filters";
 
-
-
 class App extends Component {
-
   //adding constructor from tut
   constructor(props){
     super(props);
@@ -24,39 +21,40 @@ class App extends Component {
   //Fetch json from express backend
   componentDidMount() {
     //decide what link to use here-- doesnt matter yet-- believe this is right
-    fetch('http://localhost:9000/users')
+    fetch('http://localhost:4001/users')
       .then(res => res.json())
       //.then(users => this.setState({ users }));
       .then((data) => {
         this.setState({ contacts: data })
         //data is storing correct
-        console.log(this.state.contacts)
+        //console.log(this.state.contacts)
+        console.log('hello')
       })
       .catch(console.log)
 
   }
   render() {
-  return (
+    return (
 
-    <div className = 'wrapper'> 
+      <div className = 'wrapper'> 
 
-        <MyNavbar> </MyNavbar>
-        <div className = "filter-opp-wrapper">
+          <MyNavbar> </MyNavbar>
+          <div className = "filter-opp-wrapper">
 
-          <div className = "full-filter-wrapper"> 
-          <Filters></Filters>
+            <div className = "full-filter-wrapper"> 
+            <Filters></Filters>
+            </div>
+
+            <div className = "add-box-wrapper"> 
+            <AddOpp></AddOpp>
+            <div className = "opp-box-wrapper"> 
+              <OppBox contacts={this.state.contacts}> </OppBox> 
           </div>
-
-          <div className = "add-box-wrapper"> 
-          <AddOpp></AddOpp>
-          <div className = "opp-box-wrapper"> 
-            <OppBox contacts={this.state.contacts}> </OppBox> 
+          </div>
+          </div>
+          <Footer></Footer>
         </div>
-        </div>
-        </div>
-        <Footer></Footer>
-      </div>
-  );
-}
+    );
+  }
 }
 export default App;
