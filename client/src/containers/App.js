@@ -6,7 +6,15 @@ import OppBox from '../components/OppBox';
 import Footer from "../components/footer";
 import Filters from "../components/filters";
 
-
+//Helper function to return a Date object of the current date
+function getCurrentDate(){
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  today = yyyy + '/' + mm + '/' + dd;
+  return today;
+}
 
 class App extends Component {
 
@@ -23,11 +31,26 @@ class App extends Component {
   
   //Fetch json from express backend
   componentDidMount() {
-    //decide what link to use here-- doesnt matter yet-- believe this is right
     fetch('http://localhost:9000/users')
       .then(res => res.json())
-      //.then(users => this.setState({ users }));
       .then((data) => {
+        //data is an array, let's sort it
+        //console.log("the current date is"+currDate);
+        data.sort(function(a,b){
+          var currDate = new Date();
+
+          //create date variables for each one
+          var c = new Date(a.FilterDate);
+          var d = new Date(b.FilterDate);
+          console.log("this is c"+c);
+
+          var e = Math.abs(currDate-c);
+          console.log("this is e"+e);
+          var f = Math.abs(currDate-d);
+          return e-f;
+        })
+
+        console.log("this is data"+data);
         this.setState({ contacts: data })
         //data is storing correct
         console.log(this.state.contacts)
@@ -35,6 +58,8 @@ class App extends Component {
       .catch(console.log)
 
   }
+
+  
   render() {
   return (
 

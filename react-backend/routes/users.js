@@ -11,8 +11,9 @@ const mongoose = require('mongoose');
 router.get('/', (req, res, next) => {
   Opp.find()
     .exec()
+    //.then(sort({deadline:-1}))
     .then(doc => {
-      console.log(doc);
+      //console.log(doc);
       res.status(200).json(doc);
     })
 
@@ -42,7 +43,8 @@ router.patch('/', (req, res, next) => {
   });
 });
 
-//add one for specific IDs later
+{}
+
 
 module.exports = router;
 
