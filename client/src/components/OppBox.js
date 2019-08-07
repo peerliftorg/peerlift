@@ -4,6 +4,7 @@ import '../components/OppBox.css';
 //need to import contacts to here
 
 // //This is a constructor for a component 
+
 class OppBox extends Component{
 
   constructor(props){
@@ -34,18 +35,33 @@ class OppBox extends Component{
       })
       .catch(console.log)
   }
- 
 
+    //logic to filter
+    // filterBySubstring(substr){
+    //   var tagString = this.state.contacts.Tags;
+    //   return tagString.includes(substr);
+    // }
+
+    //const word = "STEM";
+    filterMain(word){
+      //from the array
+      const array = this.state.contacts;
+      console.log('this is array'+array);
+
+      const filtered = array.filter(val => {
+        return val.Tags.includes(word);
+      })
+      return filtered;
+      //filter 
+    }
+
+    
 
   render() {
     // const box = ({contacts}) => {
     //   console.log(this.state.contacts)
     // }
-   
-
-
     return(
-      
       <div className = 'wrapper'>
 
       {this.state.contacts.map((contact) =>
@@ -70,8 +86,7 @@ class OppBox extends Component{
           )}
       </div>
 
-    );
-    
+    ); 
   }
 }
 

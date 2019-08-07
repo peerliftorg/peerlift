@@ -5,9 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //adding cors to prevent error when using api
 var cors = require('cors');
+//for body parser
+var bodyParser = require('body-parser');
+
 var app = express();
 //using cors before setting up routes
 app.use(cors());
+
+//from body-parser tut
+// create application/json parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
 
 //Set up my routes
 var indexRouter = require('./routes/index');

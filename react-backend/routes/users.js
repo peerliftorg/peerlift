@@ -1,7 +1,16 @@
 var express = require('express');
 var router = express.Router();
 const Opp = require('../opp');
+const Add = require('../add');
 const mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+
+//from body-parser tut
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //load the data from the sql pool
 //const pool = require('../app.js');
@@ -26,15 +35,23 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  res.status(200).json({
-    message: "Handling POST requests to /users"
-  });
-  const opp = new Opp({
-    _id: new mongoose.Types.ObjectId()
-    //insert other fields later
+  const add = new Add({
+    _id: new mongoose.Types.ObjectId(),
+    Name: req.body.Name
   });
   //save to db
-  product.save();
+  add.save()
+  .then(result=> {
+    console.log(result);
+  })
+  .catch(err => console.log(err));
+
+  res.status(200).json({
+    message: "Handling POST requests to /users",
+    createdOpp: add
+  });
+
+
 });
 
 router.patch('/', (req, res, next) => {
