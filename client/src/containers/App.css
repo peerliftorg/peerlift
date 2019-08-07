@@ -11,7 +11,9 @@
 
 .full-filter-wrapper{
     display:inline-block;
+    position: fixed;
 }
 .add-box-wrapper{
     display: inline-block;
+    margin-left: 20vw;
 }

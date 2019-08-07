@@ -10,7 +10,8 @@ const oppSchema = mongoose.Schema({
     DescriptionDate: String,
     MetricDate: String,
     Grade: String,
-    FilterDate: String
+    FilterDate: String,
+    Tags: String
 
 },
 {collection: 'scholarships'}

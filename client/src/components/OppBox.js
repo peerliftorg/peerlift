@@ -1,16 +1,54 @@
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
 
-  //may need to refactor into a stateful component
-//This is a constructor for a component 
-const OppBox = ({ contacts }) => {
-    //console.log(this.state.contacts);
-  
+//need to import contacts to here
+
+// //This is a constructor for a component 
+class OppBox extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      contacts: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:9000/users')
+      .then(res => res.json())
+      .then((data) => {
+        //data is an array, let's sort it by closest to current date
+        data.sort(function(a,b){
+          var currDate = new Date();
+          //create date variables for each one
+          var c = new Date(a.FilterDate);
+          var d = new Date(b.FilterDate);
+
+          var e = Math.abs(currDate-c);
+          var f = Math.abs(currDate-d);
+          return e-f;
+        })
+        this.setState({ contacts: data })
+        //data is storing correct
+        //console.log(this.state.contacts)
+      })
+      .catch(console.log)
+  }
+ 
+
+
+  render() {
+    // const box = ({contacts}) => {
+    //   console.log(this.state.contacts)
+    // }
+   
+
 
     return(
-      <div className = 'wrapper'>
       
-      {contacts.map((contact) =>
+      <div className = 'wrapper'>
+
+      {this.state.contacts.map((contact) =>
       //wrapper so it doesnt break
       <div className = "OppBoxWrapper">
       <div className = 'Title'> {contact.Title}</div>
@@ -28,14 +66,16 @@ const OppBox = ({ contacts }) => {
               <div className = 'Share'> Share </div>
               <a href = {contact.Link} className = 'Apply' target="_blank"> Apply </a>
               </div>
-      
       </div>
-          
           )}
       </div>
 
     );
+    
+  }
 }
-  export default OppBox;
-  
+
+export default OppBox;
+
+
 
