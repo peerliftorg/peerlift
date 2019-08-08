@@ -28,11 +28,17 @@ class Filters extends Component{
     }
   }
   //Starting with static
+  //rewrite as stateful
+  //pass contacts to the button to filter?
   class FilterButton extends Component{
+    //   filtered(){
+    //     //potentially set state here 
+
+    //   }
+
     render() {
         return (
-        <button className = "filter-button">
-        </button>
+        <button className = "filter-button"  > </button>
         );
     }
   }
