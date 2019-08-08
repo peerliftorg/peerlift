@@ -4,19 +4,16 @@ import Filters from "../components/filters";
 import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
 
-
-
-
 //need to import contacts to here
-
 // //This is a constructor for a component 
-
 class Opps extends Component{
 
   constructor(props){
     super(props);
     this.state = {
-      contacts: []
+      contacts: [],
+      contacts_const: [],
+      on: false
     };
      // This binding is necessary to make `this` work in the callback-- added from tut
      this.handleClick = this.handleClick.bind(this);
@@ -38,8 +35,8 @@ class Opps extends Component{
           return e-f;
         })
         this.setState({ contacts: data })
-        //data is storing correct
-        //console.log(this.state.contacts)
+        //give constant a value
+        this.setState({ contacts_const: data })
       })
       .catch(console.log)
   }
@@ -47,61 +44,29 @@ class Opps extends Component{
         //filter the results
         handleClick() {
         //set the state of contacts at the end
-        const word = "STEM";
-        const array = this.state.contacts;
-        const arrayTwo = array.filter(item => {
-            //console.log(item.Tags)
-            return item.Tags.includes(word);
-          })
-        console.log(arrayTwo)
-
-        this.setState({contacts:arrayTwo})
+        if (!this.state.on){
+            const word = "STEM";
+            const array = this.state.contacts;
+            const arrayTwo = array.filter(item => {
+                //console.log(item.Tags)
+                return item.Tags.includes(word);
+              })    
+            this.setState({contacts:arrayTwo})
+            this.setState({on:!this.state.on})
+        }
+        else{
+            this.setState({contacts:this.state.contacts_const})
+            this.setState({on:!this.state.on})
+        }
     }
-        //loop through each element
-     
-        // {array.map((item) => 
-            //if this object does not contain word, then remove from array
-            // need the index of this item in an array
-           // index = array.indexOf({item}),
-            
-            // console.log({item})
-            // (item.Tags.includes(word)) ? console.log("added"): array.splice(index)
-            
-            //console.log(item.Tags)
-            //if contact.Tag does not contain the given substring, remove
-            //this.state.contacts.Tags.filter(s => s.includes(word))
-           
-            // )}
-    
-
-       
-    //     array.filter(val => {
-    //     return val.Tags.includes(word);
-    //   })
-        //console.log(array)
-        // this.setState({contacts:array})
-        // }
-
-        
-
-    // filterMain(word){
-    //   //from the array
-    //   const array = this.state.contacts;
-    //   console.log('this is array'+array);
-
-    //   const filtered = array.filter(val => {
-    //     return val.Tags.includes(word);
-    //   })
-    //   return filtered;
-    // }
-
-    
 
   render() {
     //console.log("test"+this.state.contacts)
+    //we want to reset value to normal
     return(
         <div className = "filter-opp-wrapper">
           <div className = "full-filter-wrapper"> 
+          
           <button onClick={this.handleClick}> </button>
 
           <Filters></Filters>
@@ -123,6 +88,36 @@ class Opps extends Component{
 export default Opps;
 
 //test to write a button that enables filters
+// class Toggle extends Component{
+    
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//           on: false
+//         };
+
+//         toggle = () => {
+//             this.setState(
+//                 {on:!this.state.on}
+//             )
+//         }
+//          // This binding is necessary to make `this` work in the callback-- added from tut
+//          //this.handleClick = this.handleClick.bind(this);
+//       }
+
+//     render(){
+//         return(
+//         <div> 
+//         {this.state.on && <h1>test</h1>}
+//         <button className = "filter-button" >Click Me </button>
+//         </div>
+
+//         );
+//     }
+// }
+
+
+
 const SmartButton = ( {contacts} ) => {
     
     return(
