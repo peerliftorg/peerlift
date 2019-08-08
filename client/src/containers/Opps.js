@@ -42,10 +42,10 @@ class Opps extends Component{
   }
 
         //filter the results
-        handleClick() {
+        handleClick(word) {
         //set the state of contacts at the end
         if (!this.state.on){
-            const word = "STEM";
+            //const word = "STEM";
             const array = this.state.contacts;
             const arrayTwo = array.filter(item => {
                 //console.log(item.Tags)
@@ -63,11 +63,12 @@ class Opps extends Component{
   render() {
     //console.log("test"+this.state.contacts)
     //we want to reset value to normal
+    var word;
     return(
         <div className = "filter-opp-wrapper">
           <div className = "full-filter-wrapper"> 
           
-          <button onClick={this.handleClick}> </button>
+          <button onClick={() => this.handleClick(word = "STEM")}> </button>
 
           <Filters></Filters>
           </div>
