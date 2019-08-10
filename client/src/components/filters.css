@@ -7,6 +7,18 @@
     border: 0px;
     margin-right: 0.2em;
 }
+
+.button-clicked{
+    width: 3.8vw;
+    height: 3.8vh;
+    border-radius: 6px;
+    background-color: black;
+    outline:none;
+    border: 0px;
+    margin-right: 0.2em;
+    color: white;
+
+}
 .filter-wrapper{
 
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../containers/App.css';
 import Opps from '../containers/Opps.js';
+import Test from '../containers/test.js';
 
 import MyNavbar from '../components/nav.js';
 import AddOpp from '../components/addOpp.js';
@@ -33,7 +34,6 @@ class App extends Component {
 
         <MyNavbar> </MyNavbar>
         <Opps></Opps>
-
         <Footer></Footer>
       </div>
   );
