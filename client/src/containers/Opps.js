@@ -63,6 +63,7 @@ class Opps extends Component{
             this.setState({onOpp: !this.state.onOpp});
             this.setState({activeId: oppId});
              //var pageId = {oppId};
+             console.log('hola')
 
         }
 
@@ -263,9 +264,12 @@ class Opps extends Component{
           {this.state.onOpp &&
 
             <React.Fragment> 
+            <Backdrop onPress={() => this.handleClickOpps()}
+            ></Backdrop>
             <OppPage
             id = {this.state.activeId}
-            onClick={() => this.handleClickOpps(this.state.activeId)}
+            //this line below does nothing 
+            
             >
             </OppPage>
             </React.Fragment>
