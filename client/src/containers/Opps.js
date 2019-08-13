@@ -5,6 +5,7 @@ import Filters from "../components/filters";
 import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
 import OppPage from '../components/oppPage.js';
+import Backdrop from '../components/backdrop.js';
 
 
 //need to import contacts to here
@@ -259,17 +260,23 @@ class Opps extends Component{
 
           </div>
 
-          <div className = "add-box-wrapper"> 
-
-          <AddOpp></AddOpp>
-          <div className = "opp-box-wrapper"> 
           {this.state.onOpp &&
+
+            <React.Fragment> 
             <OppPage
             id = {this.state.activeId}
             onClick={() => this.handleClickOpps(this.state.activeId)}
             >
             </OppPage>
+            </React.Fragment>
              }
+            
+
+          <div className = "add-box-wrapper"> 
+
+          <AddOpp></AddOpp>
+          <div className = "opp-box-wrapper"> 
+         
            
            {this.state.contacts.map((contact) =>
             <React.Fragment> 
@@ -287,7 +294,6 @@ class Opps extends Component{
              </React.Fragment>
 
             )};
-
 
 
         </div>

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 //to use react router to set up SPA
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
-
 import '../containers/App.css';
 import Opps from '../containers/Opps.js';
 import Test from '../containers/test.js';
-
 import MyNavbar from '../components/nav.js';
 import AddOpp from '../components/addOpp.js';
 import OppBox from '../components/OppBox';
 import Footer from "../components/footer";
 import Filters from "../components/filters";
+import Backdrop from "../components/backdrop";
+
 
 //helper function that takes a substring, and checks whether a string in an array contains this substr
 // function filterBySubstring(substr){
@@ -34,7 +34,6 @@ class App extends Component {
   return (
 
     <div className = 'wrapper'> 
-
         <MyNavbar> </MyNavbar>
         <Opps></Opps>
         <Footer></Footer>
