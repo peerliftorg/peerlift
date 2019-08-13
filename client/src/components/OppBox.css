@@ -1,17 +1,20 @@
 .OppBoxWrapper{
   width: 42vw;
-  height: 27vh;
+  height: 30vh;
   border-radius: 6px;
   box-shadow: 0 4px 10px 0 rgba(173, 173, 173, 0.5);
   background-color: #ffffff;
   padding: 1.5em;
   margin-bottom: 2em;
+  outline:none;
+  border: 0px;
+  text-align: left;
   /* margin: 30vh; */
 }
 
 .Title{
     font-weight: 800;
-    font-size: 26px;
+    font-size: 24px;
     padding-top: 2vh;
 
 }
@@ -28,7 +31,9 @@
 
 .Data{
     border-radius: 6px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 0.2em;
     
 }
 

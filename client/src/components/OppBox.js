@@ -11,7 +11,7 @@ const OppBox = ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
     <div className = 'wrapper'>
 
     <button className = "OppBoxWrapper" onClick={onPress} oppId = {id}>
-    <li key={id} >
+    
 
 
     <div  className = 'Title'> {title}</div>
@@ -29,7 +29,6 @@ const OppBox = ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
             <div className = 'Share'> Share </div>
             <a href = {link} className = 'Apply' target="_blank"> Apply </a>
             </div>
-            </li>
 
     </button>
     </div>

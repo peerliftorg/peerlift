@@ -34,7 +34,7 @@ class OppPage extends React.Component{
             <div className = 'wrapper'>
 
              <div className = "OppPageWrapper"  >
-            <li  >
+            
         
             <div  className = 'Title'> {this.state.content.Title}</div>
         
@@ -51,7 +51,7 @@ class OppPage extends React.Component{
                     <div className = 'Share'> Share </div>
                     <a href = {this.state.content.Link} className = 'Apply' target="_blank"> Apply </a>
                     </div>
-                    </li>
+                    
         
             </div> 
             </div>

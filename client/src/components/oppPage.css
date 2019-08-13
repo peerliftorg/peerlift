@@ -8,8 +8,8 @@
 }
 
 .OppPageWrapper{
-    width: 52vw;
-    height: 70vh;
+    width: 45vw;
+    height: 60vh;
     border-radius: 6px;
     box-shadow: 0 4px 10px 0 rgba(173, 173, 173, 0.5);
     background-color: #ffffff;
@@ -19,12 +19,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 4em;
     /* margin: 30vh; */
   }
   
   .Title{
       font-weight: 800;
-      font-size: 26px;
+      font-size: 2em;
       padding-top: 2vh;
   
   }
@@ -72,6 +73,10 @@
   padding-top: 1.5vh;
   color: #686868;
   font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+
+
   }
   
   .Cta{
