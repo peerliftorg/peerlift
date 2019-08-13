@@ -4,6 +4,8 @@ import '../components/filters.css';
 import Filters from "../components/filters";
 import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
+import OppPage from '../components/oppPage.js';
+
 
 //need to import contacts to here
 // //This is a constructor for a component 
@@ -14,6 +16,7 @@ class Opps extends Component{
     this.state = {
       contacts: [],
       contacts_const: [],
+      onOpp: false,
       onStem: false,
       onLowIncome: false,
       onDiversity: false,
@@ -27,6 +30,8 @@ class Opps extends Component{
     };
      // This binding is necessary to make `this` work in the callback-- added from tut
      this.handleClickTag = this.handleClickTag.bind(this);
+     this.handleClickOpps = this.handleClickOpps.bind(this);
+
   }
 
   componentDidMount() {
@@ -50,6 +55,12 @@ class Opps extends Component{
       })
       .catch(console.log)
   }
+
+    
+        handleClickOpps(){
+            this.setState({onOpp: true});
+        }
+
 
         //filter tags
         handleClickTag(word) {
@@ -245,8 +256,9 @@ class Opps extends Component{
 
           <AddOpp></AddOpp>
           <div className = "opp-box-wrapper"> 
+          {this.state.onOpp && console.log("tes")}
         
-            <OppBox contacts = {this.state.contacts}> </OppBox> 
+            <OppBox contacts = {this.state.contacts} onPress={this.handleClickOpps}> </OppBox> 
         </div>
         </div>
         </div>

@@ -5,14 +5,14 @@ import '../components/OppBox.css';
 
 // //This is a constructor for a component 
 
-const OppBox = ( {contacts} ) => {
+const OppBox = ( {contacts, onPress} ) => {
 
   return(
     <div className = 'wrapper'>
 
     {contacts.map((contact) =>
     //wrapper so it doesnt break
-    <div className = "OppBoxWrapper">
+    <button className = "OppBoxWrapper" onClick={onPress}>
     <div className = 'Title'> {contact.Title}</div>
 
     <div className = 'Tags'> 
@@ -28,7 +28,7 @@ const OppBox = ( {contacts} ) => {
             <div className = 'Share'> Share </div>
             <a href = {contact.Link} className = 'Apply' target="_blank"> Apply </a>
             </div>
-    </div>
+    </button>
         )}
     </div>
   )

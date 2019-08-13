@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+//to use react router to set up SPA
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+
 import '../containers/App.css';
 import Opps from '../containers/Opps.js';
 import Test from '../containers/test.js';

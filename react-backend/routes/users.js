@@ -12,8 +12,6 @@ var jsonParser = bodyParser.json()
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-//load the data from the sql pool
-//const pool = require('../app.js');
 
 /* GET users listing. */
 //find all users
@@ -32,6 +30,23 @@ router.get('/', (req, res, next) => {
     });
   
   //});
+});
+
+//Get content from a specific ID
+router.get('/:oppId', (req,res,next) => {
+  const id = req.params.oppId;
+  
+  Opp.findById(id)
+    .exec()
+    .then(doc => {
+      res.status(200).json(doc);
+
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500);
+    });
+
 });
 
 router.post('/', (req, res, next) => {
