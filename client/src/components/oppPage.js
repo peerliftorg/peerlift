@@ -35,6 +35,7 @@ class OppPage extends React.Component{
         //console.log(idString)
 
         //console.log(this.props.id)
+        console.log(this.state.content)
         return (
             <div className = 'wrapper'>
 

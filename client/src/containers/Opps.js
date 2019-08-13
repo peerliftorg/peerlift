@@ -59,11 +59,8 @@ class Opps extends Component{
 
         //grab a given element's ID, 
         handleClickOpps(oppId){
-            this.setState({onOpp: true});
+            this.setState({onOpp: !this.state.onOpp});
             this.setState({activeId: oppId});
-
-
-        
              //var pageId = {oppId};
 
         }
@@ -276,8 +273,6 @@ class Opps extends Component{
            
            {this.state.contacts.map((contact) =>
             <React.Fragment> 
-
-           
 
             <OppBox 
             id = {contact._id}
