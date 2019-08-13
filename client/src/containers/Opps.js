@@ -16,6 +16,7 @@ class Opps extends Component{
     this.state = {
       contacts: [],
       contacts_const: [],
+      activeId: "",
       onOpp: false,
       onStem: false,
       onLowIncome: false,
@@ -56,9 +57,15 @@ class Opps extends Component{
       .catch(console.log)
   }
 
-    
-        handleClickOpps(){
+        //grab a given element's ID, 
+        handleClickOpps(oppId){
             this.setState({onOpp: true});
+            this.setState({activeId: oppId});
+
+
+        
+             //var pageId = {oppId};
+
         }
 
 
@@ -226,6 +233,9 @@ class Opps extends Component{
     //console.log("test"+this.state.contacts)
     //we want to reset value to normal
     var word;
+    var oppId;
+    console.log(this.state.activeId);
+
     return(
         <div className = "filter-opp-wrapper">
           <div className = "full-filter-wrapper"> 
@@ -256,9 +266,35 @@ class Opps extends Component{
 
           <AddOpp></AddOpp>
           <div className = "opp-box-wrapper"> 
-          {this.state.onOpp && console.log("tes")}
-        
-            <OppBox contacts = {this.state.contacts} onPress={this.handleClickOpps}> </OppBox> 
+          {this.state.onOpp &&
+            <OppPage
+            id = {this.state.activeId}
+            onClick={() => this.handleClickOpps(this.state.activeId)}
+            >
+            </OppPage>
+             }
+           
+           {this.state.contacts.map((contact) =>
+            <React.Fragment> 
+
+           
+
+            <OppBox 
+            id = {contact._id}
+            title = {contact.Title}
+            amount = {contact.DescriptionAmount}
+            grade = {contact.Grade}
+            date = {contact.DescriptionDate}
+            link = {contact.Link}
+            description = {contact.Description}
+            onPress={() => this.handleClickOpps(contact._id)}> 
+             </OppBox> 
+             </React.Fragment>
+
+            )};
+
+
+
         </div>
         </div>
         </div>

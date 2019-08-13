@@ -1,35 +1,37 @@
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
 
-//need to import contacts to here
 
+//can I store product ID as a variable in return? 
 // //This is a constructor for a component 
 
-const OppBox = ( {contacts, onPress} ) => {
+const OppBox = ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
 
   return(
     <div className = 'wrapper'>
 
-    {contacts.map((contact) =>
-    //wrapper so it doesnt break
-    <button className = "OppBoxWrapper" onClick={onPress}>
-    <div className = 'Title'> {contact.Title}</div>
+    <button className = "OppBoxWrapper" onClick={onPress} oppId = {id}>
+    <li key={id} >
+
+
+    <div  className = 'Title'> {title}</div>
 
     <div className = 'Tags'> 
-            <div className = 'Data' id = 'Amount'>{contact.DescriptionAmount}</div>
-            <div className = 'Data' id = 'Grade'>{contact.Grade}</div>
+            <div className = 'Data' id = 'Amount'> {amount}</div>
+            <div className = 'Data' id = 'Grade'>{grade}</div>
     </div>
 
-    <div className = 'Deadline'>{contact.DescriptionDate}</div>
+    <div className = 'Deadline'>{date}</div>
     <div className = 'Text'> Coca-Cola Scholars is a prestigious four-year grant of $ </div>
 
 
     <div className = 'Cta'> 
             <div className = 'Share'> Share </div>
-            <a href = {contact.Link} className = 'Apply' target="_blank"> Apply </a>
+            <a href = {link} className = 'Apply' target="_blank"> Apply </a>
             </div>
+            </li>
+
     </button>
-        )}
     </div>
   )
 }
