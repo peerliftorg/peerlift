@@ -1,9 +1,13 @@
 import React, {Component} from 'react'; 
-//import Navbar from 'react-bootstrap/Navbar'
-//This is a named export
-//import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import peerlift from '../images/peerlift@4x.png';
+//react router for routes
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from '../containers/App.js';
+import Home from '../containers/home.js';
+import Opps from '../containers/Opps.js';
+
+
 import '../components/nav.css';
 
 class MyNavbar extends React.Component{
@@ -12,41 +16,16 @@ class MyNavbar extends React.Component{
           <div className = 'Navbar'>
             <img className = 'logo' src={peerlift} alt=""></img>
             <ul id="nav">
-              <li><a href="#">Resources</a></li>
+              <li> <Link to="/">Home</Link> </li>
               <li><a href="#">Summer Programs</a></li>
-              <li><a href="#">Scholarships</a></li>
+              <li> <Link to="/scholarships">Scholarships</Link> </li>
             </ul>
+           
           </div>
+
+
       );
   }
 }
 
 export default MyNavbar;
-
-//bootstrap attempt    
-/*
-class MyNavbar extends Component {
-    render() {
-        return (
-            <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">
-      <img
-        src= {peerlift}
-        width="110px"
-        height="30px"
-        className="d-inline-block align-top"
-        alt="Peerlift"
-      />
-    </Navbar.Brand>
-    <Nav bsClass="mr-auto">
-      <Nav.Link bsClass = "link-text" href="#scholarships">Scholarships</Nav.Link>
-      <Nav.Link bsClass = "link-text" href="#summerprograms">Summer Programs</Nav.Link>
-      <Nav.Link bsClass = "link-text" href="#resources">Resources</Nav.Link>
-    </Nav>
-  </Navbar>
-        );
-    }
-}
-*/
-
-

@@ -6,6 +6,8 @@ import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
 import OppPage from '../components/oppPage.js';
 import Backdrop from '../components/backdrop.js';
+import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 
 //need to import contacts to here
@@ -233,7 +235,7 @@ class Opps extends Component{
     //we want to reset value to normal
     var word;
     var oppId;
-    console.log(this.state.activeId);
+    //console.log(this.state.activeId);
 
     return(
         <div className = "filter-opp-wrapper">
@@ -260,16 +262,13 @@ class Opps extends Component{
           
 
           </div>
-
+        
           {this.state.onOpp &&
-
             <React.Fragment> 
             <Backdrop onPress={() => this.handleClickOpps()}
             ></Backdrop>
             <OppPage
-            id = {this.state.activeId}
-            //this line below does nothing 
-            
+            id = {this.state.activeId}            
             >
             </OppPage>
             </React.Fragment>
@@ -279,11 +278,18 @@ class Opps extends Component{
           <div className = "add-box-wrapper"> 
 
           <AddOpp></AddOpp>
+
           <div className = "opp-box-wrapper"> 
-         
-           
+          
            {this.state.contacts.map((contact) =>
-            <React.Fragment> 
+            // <React.Fragment> 
+            // <Router>
+            // <Switch> 
+ 
+            // <Link to = {`/scholarships/${contact._id}`}>
+            // <Route path = "/scholarships/:id" exact component = {OppPage} 
+            
+            // />
 
             <OppBox 
             id = {contact._id}
@@ -293,13 +299,15 @@ class Opps extends Component{
             date = {contact.DescriptionDate}
             link = {contact.Link}
             description = {contact.Description}
-            onPress={() => this.handleClickOpps(contact._id)}> 
+            > 
              </OppBox> 
-             </React.Fragment>
+
+            //  </Link>
+            // </Switch>
+            // </Router>
+            //  </React.Fragment>
 
             )};
-
-
         </div>
         </div>
         </div>

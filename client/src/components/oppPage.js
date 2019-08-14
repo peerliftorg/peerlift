@@ -1,5 +1,11 @@
 import React, {Component} from 'react'; 
 import '../components/oppPage.css';
+import Backdrop from '../components/backdrop.js';
+import Opps from '../containers/Opps.js';
+import OppBox from '../components/OppBox.js';
+
+
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 //can I store product ID as a variable in return? 
@@ -10,14 +16,15 @@ class OppPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            content: []
+            content: [],
+            //id : this.props.match.params.id
         };
     }
 
 
     componentDidMount() {
         //let idString = this.props.id;
-        fetch('http://localhost:9000/users'+'/' +this.props.id)
+        fetch('http://localhost:9000/users'+'/' +this.props.match.params.id)
           .then(res => res.json())
           .then((data) => {
             this.setState({ content: data })
@@ -28,10 +35,20 @@ class OppPage extends React.Component{
     render() {
         //console.log(idString)
         //console.log(this.props.id)
-        console.log(this.state.content)
+        //console.log(this.state.content)
+        console.log(this.props.match.params.id)
 
         return (
+
             <div className = 'wrapper'>
+
+            {/* <Router> 
+            <Link to = {`/scholarships`}> 
+
+            <Backdrop> </Backdrop>
+            </Link>
+            <Route path = "/scholarships" exact component = {OppBox} ></Route>
+            </Router> */}
 
              <div className = "OppPageWrapper"  >
             
@@ -59,35 +76,4 @@ class OppPage extends React.Component{
     }
   }
   
-
-// const OppPage= ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
-
-//   return(
-    // <div className = 'wrapper'>
-
-    // <button className = "OppBoxWrapper" onClick={onPress} oppId = {id}>
-    // <li key={id} >
-
-
-    // <div  className = 'Title'> {title}</div>
-
-    // <div className = 'Tags'> 
-    //         <div className = 'Data' id = 'Amount'> {amount}</div>
-    //         <div className = 'Data' id = 'Grade'>{grade}</div>
-    // </div>
-
-    // <div className = 'Deadline'>{date}</div>
-    // <div className = 'Text'> Coca-Cola Scholars is a prestigious four-year grant of $ </div>
-
-
-    // <div className = 'Cta'> 
-    //         <div className = 'Share'> Share </div>
-    //         <a href = {link} className = 'Apply' target="_blank"> Apply </a>
-    //         </div>
-    //         </li>
-
-    // </button>
-    // </div>
-//   )
-// }
 export default OppPage;
