@@ -41,6 +41,8 @@ class App extends Component {
         <MyNavbar> </MyNavbar>
         <Opps></Opps>
         <Footer></Footer>
+        <Route  path = "/scholarships/:id"  component = {OppPage} /> 
+
       
         {/* <Switch> 
             <Route exact path="/" component={Home} />

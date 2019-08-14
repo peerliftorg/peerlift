@@ -6,7 +6,7 @@ import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
 import OppPage from '../components/oppPage.js';
 import Backdrop from '../components/backdrop.js';
-import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 
@@ -280,16 +280,12 @@ class Opps extends Component{
           <AddOpp></AddOpp>
 
           <div className = "opp-box-wrapper"> 
-          
+
            {this.state.contacts.map((contact) =>
-            // <React.Fragment> 
-            // <Router>
-            // <Switch> 
- 
-            // <Link to = {`/scholarships/${contact._id}`}>
-            // <Route path = "/scholarships/:id" exact component = {OppPage} 
+             <React.Fragment> 
             
-            // />
+             {/* <Route exact path = "/scholarships/:id"  component = {OppPage} >  */}
+             <Link to = {`/scholarships/${contact._id}`}>
 
             <OppBox 
             id = {contact._id}
@@ -301,13 +297,14 @@ class Opps extends Component{
             description = {contact.Description}
             > 
              </OppBox> 
+             </Link>
+            {/* //   </Route>  */}
 
-            //  </Link>
-            // </Switch>
-            // </Router>
-            //  </React.Fragment>
+              </React.Fragment>
 
             )};
+            <Route  path = "/scholarships/:id"  component = {OppPage} /> 
+
         </div>
         </div>
         </div>
@@ -315,7 +312,7 @@ class Opps extends Component{
 }
 }
 
-export default Opps;
+export default withRouter(Opps);
 
 
 // const SmartButton = ( {contacts} ) => {

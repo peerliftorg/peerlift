@@ -5,7 +5,7 @@ import Opps from '../containers/Opps.js';
 import OppBox from '../components/OppBox.js';
 
 
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+import { withRouter, Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 //can I store product ID as a variable in return? 
@@ -24,7 +24,7 @@ class OppPage extends React.Component{
 
     componentDidMount() {
         //let idString = this.props.id;
-        fetch('http://localhost:9000/users'+'/' +this.props.match.params.id)
+        fetch('http://localhost:9000/users'+'/'+this.props.match.params.id)
           .then(res => res.json())
           .then((data) => {
             this.setState({ content: data })
@@ -34,21 +34,17 @@ class OppPage extends React.Component{
 
     render() {
         //console.log(idString)
-        //console.log(this.props.id)
+        console.log("hey")
         //console.log(this.state.content)
-        console.log(this.props.match.params.id)
+        // console.log(this.props.match.params.id)
 
         return (
 
             <div className = 'wrapper'>
 
-            {/* <Router> 
-            <Link to = {`/scholarships`}> 
-
-            <Backdrop> </Backdrop>
+            <Link to = "/scholarships">
+            <Backdrop/> 
             </Link>
-            <Route path = "/scholarships" exact component = {OppBox} ></Route>
-            </Router> */}
 
              <div className = "OppPageWrapper"  >
             

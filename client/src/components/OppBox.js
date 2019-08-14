@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
+import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 //can I store product ID as a variable in return? 
@@ -8,6 +9,7 @@ import '../components/OppBox.css';
 const OppBox = ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
 
   return(
+
     <div className = 'wrapper'>
 
     <button className = "OppBoxWrapper" onClick={onPress} oppId = {id}>
