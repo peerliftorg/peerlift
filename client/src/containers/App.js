@@ -40,8 +40,9 @@ class App extends Component {
     <div className = 'wrapper'> 
         <MyNavbar> </MyNavbar>
         <Opps></Opps>
+        <Route path = "/scholarships/:id"  component = {OppPage} /> 
+
         <Footer></Footer>
-        <Route  path = "/scholarships/:id"  component = {OppPage} /> 
 
       
         {/* <Switch> 
