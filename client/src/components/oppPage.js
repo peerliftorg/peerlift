@@ -3,6 +3,8 @@ import '../components/oppPage.css';
 import Backdrop from '../components/backdrop.js';
 import Opps from '../containers/Opps.js';
 import OppBox from '../components/OppBox.js';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 
 
 import { withRouter, Link, BrowserRouter as Router, Route } from 'react-router-dom';
@@ -17,8 +19,11 @@ class OppPage extends React.Component{
         super(props);
         this.state = {
             content: [],
+            onCopy: false
             //id : this.props.match.params.id
         };
+        this.copyToClipboard = this.copyToClipboard.bind(this);
+
     }
 
 
@@ -31,13 +36,28 @@ class OppPage extends React.Component{
           })
           .catch(console.log)
       }
+      //given a URL, this copies to clipboard 
+      copyToClipboard = (e) =>{
+        // this.e.select();
+        var url = this.props.match.url;
+        // this.props.match.url.select();
+        url.select();
+        document.execCommand('copy');
+
+        console.log(url);
+
+        //e.target.focus();
+
+      }
+
+      
 
     render() {
         //console.log(idString)
-        console.log("hey")
+        console.log(this.props)
         //console.log(this.state.content)
         // console.log(this.props.match.params.id)
-
+        var e;
         return (
 
             <div className = 'wrapper'>
@@ -61,7 +81,11 @@ class OppPage extends React.Component{
         
         
             <div className = 'Cta'> 
-                    <div className = 'Share'> Share </div>
+                    <CopyToClipboard text={"http://localhost:3000"+this.props.match.url}
+                        onCopy={() => this.setState({copied: true})}>
+                        <button className = 'Share'>Share</button>
+                     </CopyToClipboard>
+
                     <a href = {this.state.content.Link} className = 'Apply' target="_blank"> Apply </a>
                     </div>
                     
@@ -73,3 +97,4 @@ class OppPage extends React.Component{
   }
   
 export default OppPage;
+
