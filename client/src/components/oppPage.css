@@ -69,7 +69,7 @@
   .Tags{
   }
   
-  .Text{
+  .PageText{
   padding-top: 1.5vh;
   color: #686868;
   font-size: 16px;
@@ -87,8 +87,18 @@
   
   }
   
-  .Share{
+  .SharePage{
   margin-right: 28vw;
-  
+  outline: none;
+  border: 0px;
+  display: flex;
+
   }
+
+  #ShareButtonPage{
+  }
+
+  #ShareButtonText{
+    padding-left: 0.7em;
+}
   

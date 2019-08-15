@@ -71,6 +71,10 @@ padding-top: 1.5vh;
 
 color: #686868;
 font-size: 16px;
+text-overflow: ellipsis;
+  /* Required for text-overflow to do anything */
+  white-space: nowrap;
+  overflow: hidden;
 
 
 }
@@ -85,5 +89,16 @@ font-size: 22px;
 
 .Share{
 margin-right: 28vw;
+padding-left: 0.7em;
 
+}
+
+.ShareButton{
+    height: 3vh;
+    width: 1.4vw;
+}
+
+a{
+    color: black;
+    text-decoration: none;
 }

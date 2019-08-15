@@ -1,12 +1,14 @@
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
 import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import shareButton from '../images/share@2x.png';
+
 
 
 //can I store product ID as a variable in return? 
 // //This is a constructor for a component 
 
-const OppBox = ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
+const OppBox = ( {id, title, amount, grade, date, link, description, onPress, oppId} ) => {
 
   return(
 
@@ -24,10 +26,11 @@ const OppBox = ( {id, title, amount, grade, date, link, onPress, oppId} ) => {
     </div>
 
     <div className = 'Deadline'>{date}</div>
-    <div className = 'Text'> Coca-Cola Scholars is a prestigious four-year grant of $ </div>
+    <div className = 'Text'> {description} </div>
 
 
     <div className = 'Cta'> 
+            <img className = 'ShareButton' src={shareButton} alt=""></img>
             <div className = 'Share'> Share </div>
             <a href = {link} className = 'Apply' target="_blank"> Apply </a>
             </div>
