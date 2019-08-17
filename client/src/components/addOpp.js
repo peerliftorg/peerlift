@@ -1,5 +1,7 @@
 import React, {Component} from 'react'; 
 import '../components/addOpp.css';
+import ConfirmButton from '../components/confirmButton';
+
 
 //refactor into a controlled component 
 //on click, go grey
@@ -12,7 +14,8 @@ class AddOpp extends Component{
     constructor(props){
         super(props);
             this.state = {
-                name: ""
+                name: "",
+                copied: false
             };
         }
     changeHandler = e => {
@@ -32,13 +35,10 @@ class AddOpp extends Component{
                 "Name": this.state.name
             })
             })
-    }
-    
-    //process post request
-    // myClick(){
-     
-    // }
+            this.setState({copied: true});
 
+    }
+     
     render() {
         const {name} = this.state
         return (
@@ -50,9 +50,18 @@ class AddOpp extends Component{
                 <button type = "submit" className = "FormButton" onClick = {this.myClick}> Add
                 </button>
             </form>
+            {this.state.copied ? 
+                    <React.Fragment>
+                     <ConfirmButton
+                     text = "Sent to Peerlift!"
+                     visible = {false}
+                     ></ConfirmButton>
+                      </React.Fragment>
+                     : null}
             </div>
         );
     }
   }
   
   export default AddOpp;
+  //notee: myClick goes nowhere

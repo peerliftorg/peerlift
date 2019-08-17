@@ -262,17 +262,7 @@ class Opps extends Component{
           
 
           </div>
-        
-          {this.state.onOpp &&
-            <React.Fragment> 
-            <Backdrop onPress={() => this.handleClickOpps()}
-            ></Backdrop>
-            <OppPage
-            id = {this.state.activeId}            
-            >
-            </OppPage>
-            </React.Fragment>
-             }
+    
             
 
           <div className = "add-box-wrapper"> 
@@ -303,7 +293,6 @@ class Opps extends Component{
               </React.Fragment>
 
             )};
-            <Route  path = "/scholarships/:id"  component = {OppPage} /> 
 
         </div>
         </div>

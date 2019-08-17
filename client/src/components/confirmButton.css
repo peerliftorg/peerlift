@@ -1,0 +1,41 @@
+.ConfirmButton{
+border-radius: 32px;
+  background-color: #1493ff;
+  font-family: Overpass;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 300;
+  display: inline-block;
+  padding: 0.5em;
+
+  position: fixed;
+  top: 90%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  
+}
+
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility :hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}

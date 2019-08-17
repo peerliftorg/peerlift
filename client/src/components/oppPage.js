@@ -3,6 +3,7 @@ import '../components/oppPage.css';
 import Backdrop from '../components/backdrop.js';
 import Opps from '../containers/Opps.js';
 import OppBox from '../components/OppBox.js';
+import ConfirmButton from '../components/confirmButton';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import shareButton from '../images/share@2x.png';
 
@@ -21,7 +22,7 @@ class OppPage extends React.Component{
         super(props);
         this.state = {
             content: [],
-            onCopy: false
+            copied: false
             //id : this.props.match.params.id
         };
         this.copyToClipboard = this.copyToClipboard.bind(this);
@@ -86,18 +87,28 @@ class OppPage extends React.Component{
 
                     <CopyToClipboard text={"http://localhost:3000"+this.props.match.url}
                         onCopy={() => this.setState({copied: true})}>
+
                         <button className = 'SharePage' >
                         <img className = 'ShareButton' id = 'ShareButtonPage' src={shareButton} alt=""></img>
                         <p id = 'ShareButtonText'> Share </p>
                         </button>
                      </CopyToClipboard>
-
-
                     <a href = {this.state.content.Link} className = 'Apply' target="_blank"> Apply </a>
                     </div>
                     
-        
+                   
             </div> 
+            {this.state.copied ? 
+                    <React.Fragment>
+                     <ConfirmButton
+                     text = "Copied to clipboard"
+                     visible = {false}
+                     ></ConfirmButton>
+                      </React.Fragment>
+                     : null}
+         
+                     
+
             </div>
         );
     }
