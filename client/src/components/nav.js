@@ -1,13 +1,10 @@
 import React, {Component} from 'react'; 
-import Nav from 'react-bootstrap/Nav';
 import peerlift from '../images/peerlift@4x.png';
 //react router for routes
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from '../containers/App.js';
 import Home from '../containers/home.js';
 import Opps from '../containers/Opps.js';
-
-
 import '../components/nav.css';
 
 class MyNavbar extends React.Component{
