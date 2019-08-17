@@ -25,3 +25,13 @@
 
 
 }
+
+.FormButton:focus {
+    color: #105FA1;
+    outline:0;
+}
+
+.FormButton:hover {
+    color: #105FA1;
+    outline:0;
+}

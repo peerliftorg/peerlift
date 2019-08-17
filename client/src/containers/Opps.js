@@ -244,14 +244,14 @@ class Opps extends Component{
             <div className = "header">Filter </div>
 
             <div className = "grade-wrapper">
-            <div className = "title">Grade </div>
+            <div className = "title">Grade: </div>
             <button className={this.state.onNine ? "button-clicked": "filter-button"} onClick={() => this.handleClickNine(word = "freshman")}> 9</button>
             <button className={this.state.onTen ? "button-clicked": "filter-button"}  onClick={() => this.handleClickTen(word = "sophomore")}> 10 </button>
             <button className={this.state.onEleven ? "button-clicked": "filter-button"}  onClick={() => this.handleClickEleven(word = "junior")}>11 </button>
             <button className={this.state.onTwelve ? "button-clicked": "filter-button"}  onClick={() => this.handleClickTwelve(word = "senior")}>12 </button>
             </div>
 
-            <div className = "title"> Tags</div>
+            <div className = "title"> Tags:</div>
             <div className = "tags"> 
             <button className={this.state.onStem ? "button-clicked": "filter-button"} onClick={() => this.handleClickStem(word = "STEM")}> STEM</button>
             <button className={this.state.onLowIncome ? "button-clicked": "filter-button"} onClick={() => this.handleClickLi(word = "low-income")}> Low-income </button>

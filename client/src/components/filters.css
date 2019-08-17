@@ -1,15 +1,17 @@
 .filter-button{
-    width: 3.8vw;
+    width: 2.9vw;
     height: 3.8vh;
     border-radius: 6px;
     background-color: #f7f7f7;
     outline:none;
     border: 0px;
     margin-right: 0.2em;
+    font-weight: bold;
+
 }
 
 .button-clicked{
-    width: 3.8vw;
+    width: 2.9vw;
     height: 3.8vh;
     border-radius: 6px;
     background-color: black;
@@ -17,9 +19,12 @@
     border: 0px;
     margin-right: 0.2em;
     color: white;
+    font-weight: bold;
+
 
 }
 .filter-wrapper{
+    padding-left: 3vw;
 
 }
 .header{
@@ -28,6 +33,7 @@
     border-bottom-style: solid;
     border-width: 2px;
     margin-bottom: 2em;
+    display: inline;
 }
 
 .title{

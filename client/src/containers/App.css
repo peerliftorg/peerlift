@@ -4,9 +4,13 @@
 .opp-box-wrapper{
     background-color: #f7f7f7;
     padding: 5em;
+    border-top: 1vh;
+    border-top-color: rgba(133, 199, 255, 0.3);
+    border-top-style: solid;
 }
 
 .filter-opp-wrapper{
+    padding-top: 5vh;
 }
 
 .full-filter-wrapper{
