@@ -1,7 +1,15 @@
 import React, {Component} from 'react'; 
-
 import MyNavbar from '../components/nav.js';
 import Footer from "../components/footer";
+import '../containers/home.css';
+import carmen from '../images/carmen@2x.svg';
+import amel from '../images/amel@2x.png';
+import anitra from '../images/anitra@2x.svg';
+
+
+
+
+
 
 
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
@@ -24,12 +32,28 @@ class Home extends Component {
       // <Router> 
       <div className = 'wrapper'> 
           <MyNavbar> </MyNavbar>
+
+          <div className = "hero-box"> 
+            <div className = "hero-title"> 💯 Scholarships and summer programs for high school. </div>
+            <div className = "hero-sub"> Loved by 60,000 students.  No accounts.  Always free.</div>
+            <div className = "hero-buttons">
+                <button className = "hero-button" id = "hero-scholarships">Scholarships</button>
+                <button className = "hero-button" id = "hero-programs">Summer programs</button>
+            </div>
+          </div>
+ 
+            <img className = "img-hero" src = {carmen} />
+        
+        <div className = "description">
+            <div className = "description-title">Student powered</div>
+            <div className = "description-text">We crowdsource quality content from students like you.   Discover and share opportunities on Peerlift. </div>
+
+
+        </div>
+
           <Footer></Footer>
         
-          {/* <Switch> 
-              <Route exact path="/" component={Home} />
-              <Route path="/scholarships" component={App} />
-          </Switch> */}
+        
        
         </div>
     );

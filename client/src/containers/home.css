@@ -1,0 +1,64 @@
+.wrapper{
+    margin-left: 3em;
+    margin-right: 3em;
+
+}
+
+.hero-box{
+padding-left: 3em;
+padding-top: 8em;
+
+}
+
+.hero-title{
+    width: 672px;
+  height: 130px;
+  font-family: Overpass;
+  font-size: 48px;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.35;
+  letter-spacing: normal;
+  color: #000000;
+
+
+}
+
+.hero-sub{
+  font-size: 24px;
+  font-weight: 300;
+  color: #000000;
+  margin-top: 1.2em;
+
+}
+
+.hero-buttons{
+    margin-top: 3em;
+
+    
+}
+
+.hero-button{
+    width:11vw;
+    height: 5vh;
+    background-color: black;
+    outline:none;
+    border: 0px;
+    margin-right: 2em;
+    color: white;
+
+    font-weight: bold;
+    font-weight: 900;
+    font-size: 18px;
+    border-style: hidden;
+}
+
+.hero-button:hover{
+    background-color: white;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+
+}
