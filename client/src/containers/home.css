@@ -20,7 +20,7 @@ padding-top: 8em;
     width: 672px;
   height: 130px;
   font-family: Overpass;
-  font-size: 48px;
+  font-size: 3.5em;
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -69,6 +69,35 @@ padding-top: 8em;
 
 }
 
+.img-grid{
+    display: grid;
+}
+
 .img-hero{
     width: 18vw;
+}
+
+.description{
+    background-color: #ffd692;
+    padding: 3em;
+
+
+}
+
+.description-title{
+  font-family: Overpass;
+  font-size: 30px;
+  font-weight: 800;
+  color: #543500;
+}
+
+.description-text{
+    font-family: Overpass;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.7;
+    letter-spacing: normal;
+    color: #543500;
 }

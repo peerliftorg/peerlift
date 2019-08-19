@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import '../containers/home.css';
 import carmen from '../images/carmen@2x.svg';
 import amel from '../images/amel@2x.svg';
-import anitra from '../images/anitra@2x.svg';
+import shirt from '../images/shirt@2x.svg';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -35,11 +35,11 @@ class Home extends Component {
                 <button className = "hero-button" id = "hero-programs">Summer programs</button>
             </div>
           </div>
- 
+          <div className = "img-grid"> 
             <img className = "img-hero" src = {carmen} />
             <img className = "img-hero" src = {amel} />
-            <img className = "img-hero" src = {anitra} />
-
+            <img className = "img-hero" src = {shirt} />
+          </div>
 
           </div>
         
