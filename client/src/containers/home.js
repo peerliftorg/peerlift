@@ -3,15 +3,8 @@ import MyNavbar from '../components/nav.js';
 import Footer from "../components/footer";
 import '../containers/home.css';
 import carmen from '../images/carmen@2x.svg';
-import amel from '../images/amel@2x.png';
+import amel from '../images/amel@2x.svg';
 import anitra from '../images/anitra@2x.svg';
-
-
-
-
-
-
-
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -33,6 +26,7 @@ class Home extends Component {
       <div className = 'wrapper'> 
           <MyNavbar> </MyNavbar>
 
+          <div className = "hero-wrapper"> 
           <div className = "hero-box"> 
             <div className = "hero-title"> 💯 Scholarships and summer programs for high school. </div>
             <div className = "hero-sub"> Loved by 60,000 students.  No accounts.  Always free.</div>
@@ -43,6 +37,11 @@ class Home extends Component {
           </div>
  
             <img className = "img-hero" src = {carmen} />
+            <img className = "img-hero" src = {amel} />
+            <img className = "img-hero" src = {anitra} />
+
+
+          </div>
         
         <div className = "description">
             <div className = "description-title">Student powered</div>

@@ -4,6 +4,12 @@
 
 }
 
+.hero-wrapper{
+    display: flex;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
 .hero-box{
 padding-left: 3em;
 padding-top: 8em;
@@ -15,7 +21,7 @@ padding-top: 8em;
   height: 130px;
   font-family: Overpass;
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.35;
@@ -61,4 +67,8 @@ padding-top: 8em;
     border-color: black;
     border-width: 3px;
 
+}
+
+.img-hero{
+    width: 18vw;
 }
