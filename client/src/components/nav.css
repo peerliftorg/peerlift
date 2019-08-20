@@ -13,8 +13,6 @@
     position: sticky;
     top: 0;
     background-color: white;
-    display: flex;
-
 }
 
 #nav {
@@ -37,3 +35,44 @@
             font-size: 18px;
             color: black;
     }
+
+    .menu{
+        display: none;
+
+    }
+
+    .mobile-grid{
+    }
+
+    .menu-off{
+        display: none;
+    }
+
+
+@media screen and (max-width: 650px){
+
+    .mobile-grid{
+        display: grid;
+        grid-template-columns: [firstC] 33% [secondC] 33% [thirdC] 33% ;
+        grid-template-rows: [firstR] 100%;
+
+    }
+    #nav{
+        display: none;
+    }
+
+    .logo{
+        grid-area: firstC / firstC / firstR / firstR;
+
+    }
+
+
+    .menu{
+        display: block;
+        grid-area: thirdC / thirdC / firstR / firstR;
+        justify-self: right;
+
+    }
+
+    
+}

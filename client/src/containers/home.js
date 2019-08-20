@@ -5,6 +5,8 @@ import '../containers/home.css';
 import carmen from '../images/carmen@2x.svg';
 import amel from '../images/amel@2x.svg';
 import shirt from '../images/shirt@2x.svg';
+import menu from '../images/menu@2x.svg';
+
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import Opps from '../containers/Opps.js';
 
@@ -33,7 +35,7 @@ class Home extends Component {
             <div className = "hero-title"> 💯 Scholarships and summer programs. </div>
             <div className = "hero-sub"> Loved by 60,000 high school students.  No accounts.  Always free.</div>
             <div className = "hero-buttons">
-                <button className = "hero-button" id = "hero-scholarships">Scholarships</button>
+                <Link to="/scholarships" > <button className = "hero-button" id = "hero-scholarships">Scholarships</button> </Link>
                 <button className = "hero-button" id = "hero-programs">Summer programs</button>
             </div>
           </div>
