@@ -6,6 +6,8 @@ import carmen from '../images/carmen@2x.svg';
 import amel from '../images/amel@2x.svg';
 import shirt from '../images/shirt@2x.svg';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+import Opps from '../containers/Opps.js';
+
 
 
 class Home extends Component {
@@ -28,17 +30,17 @@ class Home extends Component {
 
           <div className = "hero-wrapper"> 
           <div className = "hero-box"> 
-            <div className = "hero-title"> 💯 Scholarships and summer programs for high school. </div>
-            <div className = "hero-sub"> Loved by 60,000 students.  No accounts.  Always free.</div>
+            <div className = "hero-title"> 💯 Scholarships and summer programs. </div>
+            <div className = "hero-sub"> Loved by 60,000 high school students.  No accounts.  Always free.</div>
             <div className = "hero-buttons">
                 <button className = "hero-button" id = "hero-scholarships">Scholarships</button>
                 <button className = "hero-button" id = "hero-programs">Summer programs</button>
             </div>
           </div>
           <div className = "img-grid"> 
-            <img className = "img-hero" src = {carmen} />
-            <img className = "img-hero" src = {amel} />
-            <img className = "img-hero" src = {shirt} />
+            <img className = "img-hero" id = "carmen" src = {carmen} />
+            <img className = "img-hero" id = "amel" src = {amel} />
+            <img className = "img-hero" id = "shirt" src = {shirt} />
           </div>
 
           </div>

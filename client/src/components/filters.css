@@ -22,6 +22,7 @@
     font-weight: bold;
 
 
+
 }
 .filter-wrapper{
     padding-left: 3vw;
@@ -44,10 +45,55 @@
 
 }
 
-.tags{
-    display: flex;
-    flex-direction: column;
+.tag-grid{
+    display: grid;
+    grid-template-columns: [firstC] 25% [secondC] 25% [thirdC] 25% [fourthC] 25% ;
+    grid-template-rows: [firstR] 25% [secondR] 25% [thirdR] 25% [fourthR] 25% ;
+    grid-gap: 20px 20px;
 }
+
+.stem{
+    grid-area: firstC / firstC / firstR / firstR;
+}
+
+.stemButton{
+    grid-area: thirdC / thirdC / firstR / firstR;
+
+}
+
+.lowIncome{
+    grid-area: firstC / firstC / secondR / secondR;
+
+}
+
+.lowIncomeButton{
+    grid-area: thirdC / thirdC / secondR / secondR;
+}
+
+.diversity{
+    grid-area: firstC / firstC / thirdR / thirdR;
+
+}
+
+.diversityButton{
+    grid-area: thirdC / thirdC / thirdR / thirdR;
+}
+
+.service{
+    grid-area: firstC / firstC / fourthR / fourthR;
+
+}
+
+.serviceButton{
+    grid-area: thirdC / thirdC / fourthR / fourthR;
+}
+
+.tag-text{
+    font-size: 18px;
+}
+
+
+
 
 #tag{
     margin-bottom: 2em;

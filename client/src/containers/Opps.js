@@ -7,6 +7,7 @@ import AddOpp from '../components/addOpp.js';
 import OppPage from '../components/oppPage.js';
 import Backdrop from '../components/backdrop.js';
 import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import check from '../images/check@2x.svg';
 
 
 
@@ -252,11 +253,15 @@ class Opps extends Component{
             </div>
 
             <div className = "title"> Tags:</div>
-            <div className = "tags"> 
-            <button className={this.state.onStem ? "button-clicked": "filter-button"} onClick={() => this.handleClickStem(word = "STEM")}> STEM</button>
-            <button className={this.state.onLowIncome ? "button-clicked": "filter-button"} onClick={() => this.handleClickLi(word = "low-income")}> Low-income </button>
-            <button className={this.state.onDiversity ? "button-clicked": "filter-button"} onClick={() => this.handleClickDiversity(word = "diversity")}>Diversity </button>
-            <button className={this.state.onService ? "button-clicked": "filter-button"} onClick={() => this.handleClickService(word = "service")}>Service </button>
+            <div className = "tag-grid"> 
+            <div className = "stem tag-text">STEM </div>
+            <button className={this.state.onStem ? "button-clicked stemButton": "filter-button stemButton"} onClick={() => this.handleClickStem(word = "STEM")}>  </button>
+            <div className = "lowIncome tag-text">Low-Income </div>
+            <button className={this.state.onLowIncome ? "button-clicked lowIncomeButton": "filter-button lowIncomeButton"} onClick={() => this.handleClickLi(word = "low-income")}>  </button>
+            <div className = "diversity tag-text">Diversity </div>
+            <button className={this.state.onDiversity ? "button-clicked diversityButton": "filter-button diversityButton"} onClick={() => this.handleClickDiversity(word = "diversity")}> </button>
+            <div className = "service tag-text">Service </div>
+            <button className={this.state.onService ? "button-clicked serviceButton": "filter-button serviceButton"} onClick={() => this.handleClickService(word = "service")}> </button>
             </div>
             </div>
           

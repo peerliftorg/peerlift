@@ -8,6 +8,8 @@
     display: flex;
     margin-left: 3em;
     margin-right: 3em;
+    margin-top: 3em;
+
 }
 
 .hero-box{
@@ -17,10 +19,9 @@ padding-top: 8em;
 }
 
 .hero-title{
-    width: 672px;
   height: 130px;
   font-family: Overpass;
-  font-size: 3.5em;
+  font-size: 3.1vw;
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -32,15 +33,15 @@ padding-top: 8em;
 }
 
 .hero-sub{
-  font-size: 24px;
+  font-size: 1.2vw;
   font-weight: 300;
   color: #000000;
-  margin-top: 1.2em;
+  margin-top: 2em;
 
 }
 
 .hero-buttons{
-    margin-top: 3em;
+    margin-top: 4em;
 
     
 }
@@ -54,9 +55,9 @@ padding-top: 8em;
     margin-right: 2em;
     color: white;
 
-    font-weight: bold;
+    font-weight: black;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 1vw;
     border-style: hidden;
 }
 
@@ -71,15 +72,56 @@ padding-top: 8em;
 
 .img-grid{
     display: grid;
+    grid-template-columns: [firstC] 16% [secondC] 16% [thirdC] 16% [fourthC] 16% [fifthC] 16% [sixthC] 16%;
+    grid-template-rows: [firstR] 16% [secondR] 16% [thirdR] 16% [fourthR] 16% [fifthR] 16% [sixthR] 16%;
+    grid-gap: 10px 5px;
 }
 
 .img-hero{
-    width: 18vw;
+}
+
+#amel{
+    width: 22vw;
+    z-index: 3;
+    grid-column-start: thirdC;
+    grid-column-end: fourthC;
+    grid-row-start: secondR;
+    grid-row-end: fifthR;
+   
+
+}
+
+#carmen{
+    width: 16vw;
+    grid-column-start: firstC;
+    grid-column-end: secondC;
+    grid-row-start: fourthR;
+    grid-row-end: sixthR;
+    opacity: 0.8;
+    
+
+    
+}
+
+
+
+#shirt{
+    width: 12vw;
+    z-index: 2;
+    grid-column-start: fifthC;
+    grid-column-end: sixthC;
+    grid-row-start: firstR;
+    grid-row-end: secondR;
+    background-color: rgba(216, 216, 216, 0.3);
+    opacity: 0.8;
+
+
 }
 
 .description{
     background-color: #ffd692;
     padding: 3em;
+    margin-top: 2.5vh;
 
 
 }
@@ -100,4 +142,9 @@ padding-top: 8em;
     line-height: 1.7;
     letter-spacing: normal;
     color: #543500;
+}
+
+.frame{
+    width: 50%;
+    height: 40em;
 }
