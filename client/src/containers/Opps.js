@@ -254,14 +254,23 @@ class Opps extends Component{
 
             <div className = "title"> Tags:</div>
             <div className = "tag-grid"> 
+
             <div className = "stem tag-text">STEM </div>
-            <button className={this.state.onStem ? "button-clicked stemButton": "filter-button stemButton"} onClick={() => this.handleClickStem(word = "STEM")}>  </button>
+            <button className={this.state.onStem ? "button-clicked stemButton": "filter-button stemButton"} onClick={() => this.handleClickStem(word = "STEM")}>
+            {this.state.onStem && <img src = {check}></img>}  </button>
+
             <div className = "lowIncome tag-text">Low-Income </div>
-            <button className={this.state.onLowIncome ? "button-clicked lowIncomeButton": "filter-button lowIncomeButton"} onClick={() => this.handleClickLi(word = "low-income")}>  </button>
+            <button className={this.state.onLowIncome ? "button-clicked lowIncomeButton": "filter-button lowIncomeButton"} onClick={() => this.handleClickLi(word = "low-income")}>
+            {this.state.onLowIncome && <img src = {check}></img>}  </button> 
+
             <div className = "diversity tag-text">Diversity </div>
-            <button className={this.state.onDiversity ? "button-clicked diversityButton": "filter-button diversityButton"} onClick={() => this.handleClickDiversity(word = "diversity")}> </button>
+            <button className={this.state.onDiversity ? "button-clicked diversityButton": "filter-button diversityButton"} onClick={() => this.handleClickDiversity(word = "diversity")}>
+            {this.state.onDiversity && <img src = {check}></img>}  </button> 
+
             <div className = "service tag-text">Service </div>
-            <button className={this.state.onService ? "button-clicked serviceButton": "filter-button serviceButton"} onClick={() => this.handleClickService(word = "service")}> </button>
+            <button className={this.state.onService ? "button-clicked serviceButton": "filter-button serviceButton"} onClick={() => this.handleClickService(word = "service")}> 
+            {this.state.onService && <img src = {check}></img>}  </button> 
+            
             </div>
             </div>
           
