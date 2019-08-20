@@ -24,7 +24,7 @@ class MyNavbar extends React.Component{
     this.setState({active: !this.state.active});
 
   }
-  getImageName = () => this.state.active ? 'menu@2x.svg' : 'x@2x.svg'
+  getImageName = () => this.state.active ? 'menu' : 'x'
 
 
   render() {
@@ -37,8 +37,8 @@ class MyNavbar extends React.Component{
             <div className = "mobile-grid">
               <Link to="/"> <img className = 'logo' src={peerlift} alt=""></img> </Link>
 
-                <img onClick={() => this.handleClick()} className = "menu" src = {imageName} ></img> 
-               
+                <img onClick={() => this.handleClick()} className = "menu" src = {this.state.active ? x:menu} ></img> 
+
             </div>
 
             <ul id="nav">
@@ -47,7 +47,7 @@ class MyNavbar extends React.Component{
               <li> <Link to="/scholarships">Scholarships</Link> </li>
             </ul>
 
-            {this.state.active  && 
+            {this.state.active && 
                 <MobileNav> </MobileNav>}
            
           </div>
