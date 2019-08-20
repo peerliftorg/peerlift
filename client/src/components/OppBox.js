@@ -14,7 +14,7 @@ const OppBox = ( {id, title, amount, grade, date, link, description, onPress, op
 
     <div className = 'wrapper'>
 
-    <button className = "OppBoxWrapper" onClick={onPress} oppId = {id}>
+    <button className = "OppBox" onClick={onPress} oppId = {id}>
     
 
 

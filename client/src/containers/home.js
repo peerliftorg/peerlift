@@ -27,7 +27,7 @@ class Home extends Component {
     render() {
     return (
       // <Router> 
-      <div className = 'wrapper'> 
+      <div className = 'home-wrapper'> 
           <MyNavbar> </MyNavbar>
 
           <div className = "hero-wrapper"> 

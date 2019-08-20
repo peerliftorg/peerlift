@@ -98,3 +98,16 @@
 #tag{
     margin-bottom: 2em;
 }
+
+/*This MQ is to hide filters at 700px */
+@media screen and (max-width: 700px){
+
+.full-filter-wrapper{
+    display: none;
+}
+
+.add-box-wrapper{
+    margin-left: 0; 
+}
+    
+}
