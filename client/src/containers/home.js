@@ -32,8 +32,10 @@ class Home extends Component {
 
           <div className = "hero-wrapper"> 
           <div className = "hero-box"> 
-            <div className = "hero-title"> 💯 Scholarships and summer programs. </div>
-            <div className = "hero-sub"> Loved by 60,000 high school students.  No accounts.  Always free.</div>
+          <div className = "hero-title-sub"> 
+              <div className = "hero-title"> 💯 Scholarships and summer programs. </div>
+              <div className = "hero-sub"> Loved by 60,000 high school students.  No accounts.  Always free.</div>
+          </div>
             <div className = "hero-buttons">
                 <Link to="/scholarships" > <button className = "hero-button" id = "hero-scholarships">Scholarships</button> </Link>
                 <button className = "hero-button" id = "hero-programs">Summer programs</button>

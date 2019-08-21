@@ -4,7 +4,7 @@
 }
 
 .rocket{
-    width: 3vw;
+    width: 40px;
     height: 7.2vh;
 }
 
@@ -25,7 +25,6 @@ margin-left: 2em;
 
 .Footer-content{
 font-size: 18px;
-
 font-weight: 800;
 }
 
@@ -49,4 +48,22 @@ margin-left: 2em;
     margin-top: 2em;
     font-size: 16px;
 
+}
+
+
+@media screen and (max-width: 500px){
+
+    .Footer-wrapper{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 4em;
+       
+
+    }
+
+    .rocket{
+        width: 40px;
+    }
+
+    
 }

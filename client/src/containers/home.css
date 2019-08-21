@@ -19,9 +19,9 @@ padding-top: 8em;
 }
 
 .hero-title{
-  height: 130px;
+  height: 8vh;
   font-family: Overpass;
-  font-size: 3.1vw;
+  font-size: 45px;
   font-weight: 900;
   font-style: normal;
   font-stretch: normal;
@@ -33,7 +33,7 @@ padding-top: 8em;
 }
 
 .hero-sub{
-  font-size: 1.2vw;
+  font-size: 20px;
   font-weight: 300;
   color: #000000;
   margin-top: 2em;
@@ -41,7 +41,10 @@ padding-top: 8em;
 }
 
 .hero-buttons{
-    margin-top: 4em;
+    margin-top: 8em;
+    display: flex;
+    flex-direction: row;
+
 
     
 }
@@ -149,3 +152,76 @@ padding-top: 8em;
     height: 40em;
 
 }
+
+.hero-title-sub{
+    display: grid; 
+    grid-template-columns: [firstC] 100%;
+    grid-template-rows: [firstR] 60% [secondR] 40%;
+    grid-gap: 20px 20px;
+}
+
+
+@media screen and (max-width: 1000px){
+    .hero-wrapper{
+        flex-direction: column;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .hero-title{
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .hero-box{
+        padding-left: 0;
+    }
+
+    .hero-sub{
+        text-align: center;
+        font-size: 18px;
+
+    }
+
+    .hero-buttons{
+        flex-direction: column;
+
+    }
+
+    .hero-button{
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 2em;
+
+    }
+
+    #amel{
+        width: 250px;
+    }
+
+    #carmen{
+        width: 200px;
+
+    }
+
+    #shirt{
+        width: 150px;
+
+    }
+
+    .hero-title-sub{
+        grid-template-rows: [firstR] 60% [secondR] 40%;
+        grid-gap: 20px 20px;
+    }
+        
+    }
+
+
+    @media screen and (max-width: 400px){
+    
+        .hero-title-sub{
+            grid-template-rows: [firstR] 80% [secondR] 20%;
+            grid-gap: 30px 20px;
+        }
+            
+        }

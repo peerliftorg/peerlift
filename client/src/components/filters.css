@@ -1,3 +1,9 @@
+
+.full-filter-wrapper{
+    display:inline-block;
+    position: fixed;
+    padding-left: 3em;
+}
 .filter-button{
     width: 2.9vw;
     height: 3.8vh;
@@ -109,5 +115,27 @@
 .add-box-wrapper{
     margin-left: 0; 
 }
+
+.full-filter-clicked{
+    color: white;
+    background-color: black;
+    padding-bottom: 6em;
+}
+
+.header{
+}
     
+}
+
+.filter-button{
+    width: 40px;
+    height: 40px;
+    color: black;
+}
+
+.button-clicked{
+    width: 40px;
+    height: 40px;
+    color: black;
+
 }

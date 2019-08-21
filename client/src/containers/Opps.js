@@ -1,7 +1,10 @@
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
 import '../components/filters.css';
+import '../components/mobileFilter.css';
 import Filters from "../components/filters";
+import MobileFilter from "../components/mobileFilter";
+
 import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
 import OppPage from '../components/oppPage.js';
@@ -10,8 +13,6 @@ import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-
 import check from '../images/check@2x.svg';
 
 
-
-//need to import contacts to here
 // //This is a constructor for a component 
 class Opps extends Component{
 
@@ -21,6 +22,7 @@ class Opps extends Component{
       contacts: [],
       contacts_const: [],
       activeId: "",
+      filters: false,
       onOpp: false,
       onStem: false,
       onLowIncome: false,
@@ -61,11 +63,18 @@ class Opps extends Component{
       .catch(console.log)
   }
 
+        //toggle mobile filters
+         handleClickFilters(){
+            this.setState({filters: !this.state.filters});
+
+          
+        }
+
+
         //grab a given element's ID, 
         handleClickOpps(oppId){
             this.setState({onOpp: !this.state.onOpp});
             this.setState({activeId: oppId});
-             //var pageId = {oppId};
              console.log('hola')
 
         }
@@ -229,19 +238,18 @@ class Opps extends Component{
     }
 
 
-
-
   render() {
     //console.log("test"+this.state.contacts)
     //we want to reset value to normal
     var word;
     var oppId;
-    //console.log(this.state.activeId);
+    console.log(this.state.filters);
 
     return(
         <div className = "filter-opp-wrapper">
-          <div className = "full-filter-wrapper"> 
-          <div className = "filter-wrapper">
+            <MobileFilter onPress={() => this.handleClickFilters()}></MobileFilter>
+
+          <div className = {this.state.filters ? "full-filter-wrapper": "full-filter-clicked"}> 
             <div className = "header">Filter </div>
 
             <div className = "grade-wrapper">
@@ -270,8 +278,7 @@ class Opps extends Component{
             <div className = "service tag-text">Service </div>
             <button className={this.state.onService ? "button-clicked serviceButton": "filter-button serviceButton"} onClick={() => this.handleClickService(word = "service")}> 
             {this.state.onService && <img src = {check}></img>}  </button> 
-            
-            </div>
+
             </div>
           
 
