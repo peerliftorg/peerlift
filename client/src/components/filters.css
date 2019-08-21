@@ -99,14 +99,16 @@
 }
 
 
-
-
 #tag{
     margin-bottom: 2em;
 }
 
 /*This MQ is to hide filters at 700px */
 @media screen and (max-width: 700px){
+
+.tag-grid{
+    grid-gap: 2em 20px;
+}
 
 .full-filter-wrapper{
     display: none;
@@ -119,23 +121,35 @@
 .full-filter-clicked{
     color: white;
     background-color: black;
-    padding-bottom: 6em;
+    padding-bottom: 10em;
+    padding-left: 2em;
 }
 
 .header{
 }
     
-}
-
 .filter-button{
     width: 40px;
     height: 40px;
-    color: black;
+    color: white;
+    border-radius: 6px;
+    border: solid 3px #ffffff;
+    background-color: #000000;
+    margin-right: 1.5em;
 }
 
 .button-clicked{
     width: 40px;
     height: 40px;
     color: black;
+    background-color: white;
+    margin-right: 1.5em;
+
 
 }
+
+
+
+
+}
+
