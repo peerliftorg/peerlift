@@ -69,8 +69,13 @@ class OppPage extends React.Component{
             <Backdrop/> 
             </Link>
 
-             <div className = "OppPageWrapper"  >
             
+
+             <div className = "OppPageWrapper"  >
+             
+             <Link to = "/scholarships">
+             <div className = "mobileGoBack">Go back</div>
+            </Link>
         
             <div  className = 'Title'> {this.state.content.Title}</div>
         

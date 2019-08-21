@@ -5,6 +5,9 @@
     color: white;
     display: none;
     border: none;
+    position: sticky;
+    top: 70px;
+
 
     
 }
