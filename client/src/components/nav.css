@@ -8,8 +8,7 @@
 
 .Navbar{
     padding-top: 2.5vh;
-    padding-left: 2vh;
-    padding-right: 2vh;
+    padding-bottom: 2.5vh;
     position: sticky;
     top: 0;
     background-color: white;
@@ -71,6 +70,7 @@
 
     .logo{
         grid-area: firstC / firstC / firstR / firstR;
+        padding-left: 2em;
 
     }
 
@@ -79,6 +79,9 @@
         display: block;
         grid-area: thirdC / thirdC / firstR / firstR;
         justify-self: right;
+        padding-right: 2em;
+        padding-top: 7px;
+        padding-bottom: 7px;
 
     }
 

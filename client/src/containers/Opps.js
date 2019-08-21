@@ -251,7 +251,7 @@ class Opps extends Component{
         <div className = "filter-opp-wrapper">
             <MobileFilter onPress={() => this.handleClickFilters()}></MobileFilter>
 
-          <div className = {this.state.filters ? "full-filter-wrapper": "full-filter-clicked"}> 
+          <div className = {this.state.filters ? "full-filter-clicked": "full-filter-wrapper"}> 
             <div className = "header">Filter </div>
 
             <div className = "grade-wrapper">
@@ -267,19 +267,19 @@ class Opps extends Component{
 
             <div className = "stem tag-text">STEM </div>
             <button className={this.state.onStem ? "button-clicked stemButton": "filter-button stemButton "} onClick={() => this.handleClickStem(word = "STEM")}>
-            {this.state.onStem && <img src = {this.state.filters ?check:blackcheck}></img>}  </button>
+            {this.state.onStem && <img src = {this.state.filters ? blackcheck:check}></img>}  </button>
 
             <div className = "lowIncome tag-text">Low-Income </div>
             <button className={this.state.onLowIncome ? "button-clicked lowIncomeButton": "filter-button lowIncomeButton "} onClick={() => this.handleClickLi(word = "low-income")}>
-            {this.state.onLowIncome && <img src = {this.state.filters ?check:blackcheck}></img>}  </button> 
+            {this.state.onLowIncome && <img src = {this.state.filters ? blackcheck:check}></img>}  </button> 
 
             <div className = "diversity tag-text">Diversity </div>
             <button className={this.state.onDiversity ? "button-clicked diversityButton": "filter-button diversityButton " } onClick={() => this.handleClickDiversity(word = "diversity")}>
-            {this.state.onDiversity && <img src = {this.state.filters ?check:blackcheck}></img>}  </button> 
+            {this.state.onDiversity && <img src = {this.state.filters ? blackcheck:check}></img>}  </button> 
 
             <div className = "service tag-text">Service </div>
             <button className={this.state.onService ? "button-clicked serviceButton": "filter-button serviceButton "} onClick={() => this.handleClickService(word = "service")}> 
-            {this.state.onService && <img src = {this.state.filters ?check:blackcheck}></img>}  </button> 
+            {this.state.onService && <img src = {this.state.filters ? blackcheck:check}></img>}  </button> 
 
             </div>
           

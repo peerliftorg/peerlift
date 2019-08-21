@@ -20,6 +20,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 4em;
+    z-index: 7;
+
     /* margin: 30vh; */
   }
   
@@ -116,6 +118,11 @@
     display: block;
     font-size: 18px;
     color: #686868;
+    padding-top: 1em;
+}
 
+.mobileGoBack:hover{
+    text-decoration: none;
+    cursor: pointer;
 }
 }

@@ -123,6 +123,9 @@
     background-color: black;
     padding-bottom: 10em;
     padding-left: 2em;
+    position: sticky;
+    top: 50px;
+    z-index: 4;
 }
 
 .header{
