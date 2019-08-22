@@ -3,6 +3,8 @@
     height: 100vh;
     font-weight: 900;
     line-height: 2.2;
+    z-index: 5;
+
 
 
 }

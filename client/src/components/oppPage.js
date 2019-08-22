@@ -72,7 +72,7 @@ class OppPage extends React.Component{
 
              <div className = "OppPageWrapper"  >
              
-             <Link to = "/scholarships">
+             <Link to = {"/" + this.props.page}>
              <div className = "mobileGoBack">Go back</div>
             </Link>
         
