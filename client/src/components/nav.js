@@ -43,7 +43,7 @@ class MyNavbar extends React.Component{
 
             <ul id="nav">
               <li> <a href="https://medium.com/peerlift" target="_blank" >Resources </a> </li>
-              <li><a href="#">Summer Programs</a></li>
+              <li><Link to="/summerprograms">Summer programs</Link></li>
               <li> <Link to="/scholarships">Scholarships</Link> </li>
             </ul>
 

@@ -21,10 +21,14 @@ app.use(bodyParser.json());
 
 //Set up my routes
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/scholarships');
+var summerRouter = require('./routes/summerprograms');
+
 //Forward traffic to usersRouter
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/scholarships', usersRouter);
+app.use('/summerprograms', summerRouter);
+
 
 
 const mongoose = require('mongoose');

@@ -26,13 +26,12 @@ class OppPage extends React.Component{
             //id : this.props.match.params.id
         };
         this.copyToClipboard = this.copyToClipboard.bind(this);
-
     }
 
 
     componentDidMount() {
         //let idString = this.props.id;
-        fetch('http://localhost:9000/users'+'/'+this.props.match.params.id)
+        fetch('http://localhost:9000' + this.props.match.url)
           .then(res => res.json())
           .then((data) => {
             this.setState({ content: data })
@@ -99,9 +98,7 @@ class OppPage extends React.Component{
                         </button>
                      </CopyToClipboard>
                     <a href = {this.state.content.Link} className = 'Apply' target="_blank"> Apply </a>
-                    </div>
-                    
-                   
+                    </div>    
             </div> 
             {this.state.copied ? 
                     <React.Fragment>

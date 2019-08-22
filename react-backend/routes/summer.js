@@ -18,7 +18,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 /* GET users listing. */
 //find all scholarships from .scholarships
 router.get('/', (req, res, next) => {
-  Opp.find()
+  Summer.find()
     .exec()
     //.then(sort({deadline:-1}))
     .then(doc => {
@@ -39,7 +39,7 @@ router.get('/', (req, res, next) => {
 router.get('/:oppId', (req,res,next) => {
   const id = req.params.oppId;
   
-  Opp.findById(id)
+  Summer.findById(id)
     .exec()
     .then(doc => {
       res.status(200).json(doc);
@@ -57,25 +57,6 @@ router.get('/:oppId', (req,res,next) => {
 //Get request for summer programs by ID
 
 
-router.post('/', (req, res, next) => {
-  const add = new Add({
-    _id: new mongoose.Types.ObjectId(),
-    Name: req.body.Name
-  });
-  //save to db
-  add.save()
-  .then(result=> {
-    console.log(result);
-  })
-  .catch(err => console.log(err));
-
-  res.status(200).json({
-    message: "Handling POST requests to /users",
-    createdOpp: add
-  });
-
-
-});
 
 router.patch('/', (req, res, next) => {
   res.status(200).json({

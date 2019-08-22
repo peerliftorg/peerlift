@@ -6,6 +6,8 @@ import Home from './containers/home';
 import Notfound from './components/notFound';
 import OppPage from './components/oppPage.js';
 import Opps from './containers/Opps.js';
+import Summer from './containers/summer.js';
+
 
 
 
@@ -18,6 +20,8 @@ const routing = (
         <Switch> 
         <Route exact path="/" component={Home} />
         <Route path="/scholarships" component={App} />
+        <Route path="/summerprograms" component={Summer} />
+
         <Route component={Notfound} />
         </Switch>
       </div>

@@ -44,7 +44,7 @@ class Opps extends Component{
   }
 
   componentDidMount() {
-    fetch('http://localhost:9000/users')
+    fetch('http://localhost:9000/scholarships')
       .then(res => res.json())
       .then((data) => {
         //data is an array, let's sort it by closest to current date
