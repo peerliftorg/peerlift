@@ -12,7 +12,7 @@ class MobileNav extends React.Component{
             <div className = 'mobileNav'>
               <ul id = "mobile-list">
                 <li id = "mobile-item"> <Link to="/scholarships">Scholarships</Link> </li>
-                <li id = "mobile-item"> <Link to="/">Summer Programs</Link> </li>
+                <li id = "mobile-item"> <Link to="/summerprograms">Summer Programs</Link> </li>
                 <li id = "mobile-item"><a href="https://medium.com/peerlift" target="_blank">Resources </a></li>
               </ul>
             </div>

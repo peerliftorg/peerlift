@@ -38,7 +38,7 @@ class Home extends Component {
           </div>
             <div className = "hero-buttons">
                 <Link to="/scholarships" > <button className = "hero-button" id = "hero-scholarships">Scholarships</button> </Link>
-                <button className = "hero-button" id = "hero-programs">Summer programs</button>
+                <Link to = "/summerprograms"> <button className = "hero-button" id = "hero-programs">Summer programs</button> </Link>
             </div>
           </div>
           <div className = "img-grid"> 
