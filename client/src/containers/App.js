@@ -4,7 +4,6 @@ import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../containers/App.css';
 import Opps from '../containers/Opps.js';
 import OppPage from '../components/oppPage.js';
-
 import Test from '../containers/test.js';
 import MyNavbar from '../components/nav.js';
 import AddOpp from '../components/addOpp.js';
@@ -40,7 +39,8 @@ class App extends Component {
     <div className = 'wrapper'> 
         <MyNavbar> </MyNavbar>
         <Opps></Opps>
-        <Route path = "/scholarships/:id"  component = {OppPage} /> 
+        <Route path = "/scholarships/:id"  
+          render={(props) => <OppPage {...props} page={'scholarships'} />} /> 
 
         <Footer></Footer>
 

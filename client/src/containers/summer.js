@@ -119,7 +119,7 @@ class Summer extends Component{
       }
   
   
-      handleClickPreCollegee(word) {
+      handleClickPreCollege(word) {
           //code for onStem
           if (!this.state.onPreCollege){
               //take the modified contact list
@@ -130,7 +130,7 @@ class Summer extends Component{
               this.setState({contacts:arrayTwo})
               this.setState({onPreCollege:!this.state.onPreCollege})
           }
-          else if (this.state.onLowIncome){
+          else if (this.state.onPreCollege){
               this.setState({contacts:this.state.contacts_const})
               this.setState({onPreCollege:!this.state.onPreCollege})
           }
@@ -147,7 +147,7 @@ class Summer extends Component{
               this.setState({contacts:arrayTwo})
               this.setState({onLeadership:!this.state.onLeadership})
           }
-          else if (this.state.onDiversity){
+          else if (this.state.onLeadership){
               this.setState({contacts:this.state.contacts_const})
               this.setState({onLeadership:!this.state.onLeadership})
           }
@@ -251,7 +251,7 @@ class Summer extends Component{
               <div className = "tag-grid"> 
   
               <div className = "stem tag-text">Pre-College </div>
-              <button className={this.state.onPreCollege ? "button-clicked stemButton": "filter-button stemButton "} onClick={() => this.handleClickPreCollegee(word = "pre-college")}>
+              <button className={this.state.onPreCollege ? "button-clicked stemButton": "filter-button stemButton "} onClick={() => this.handleClickPreCollege(word = "pre-college")}>
               {this.state.onPreCollege && <img src = {this.state.filters ? blackcheck:check}></img>}  </button>
   
               <div className = "lowIncome tag-text">Leadership </div>
@@ -259,7 +259,7 @@ class Summer extends Component{
               {this.state.onLeadership && <img src = {this.state.filters ? blackcheck:check}></img>}  </button> 
   
               <div className = "diversity tag-text">STEM </div>
-              <button className={this.state.onStem ? "button-clicked diversityButton": "filter-button diversityButton " } onClick={() => this.handleClickStem(word = "STEM")}>
+              <button className={this.state.onStem ? "button-clicked diversityButton": "filter-button diversityButton " } onClick={() => this.handleClickStem(word = "stem")}>
               {this.state.onStem && <img src = {this.state.filters ? blackcheck:check}></img>}  </button> 
   
              
@@ -303,7 +303,8 @@ class Summer extends Component{
           </div>
           </div>
           </div>
-          <Route path = "/summerprograms/:id"  component = {OppPage} /> 
+          <Route path = "/summerprograms/:id"  
+          render={(props) => <OppPage {...props} page={'summerprograms'} />} /> 
 
             <Footer></Footer>
           </div>

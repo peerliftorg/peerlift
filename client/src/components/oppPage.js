@@ -10,7 +10,7 @@ import shareButton from '../images/share@2x.png';
 
 
 
-import { withRouter, Link, BrowserRouter as Router, Route } from 'react-router-dom';
+import { withRouter, page, Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 //can I store product ID as a variable in return? 
@@ -56,7 +56,7 @@ class OppPage extends React.Component{
 
     render() {
         //console.log(idString)
-        console.log(this.props)
+        console.log(this.props.page)
         //console.log(this.state.content)
         // console.log(this.props.match.params.id)
         var e;
@@ -64,7 +64,7 @@ class OppPage extends React.Component{
 
             <div className = 'wrapper'>
 
-            <Link to = "/scholarships">
+            <Link to = {"/" + this.props.page}>
             <Backdrop/> 
             </Link>
 
