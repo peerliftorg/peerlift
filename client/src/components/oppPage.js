@@ -88,7 +88,7 @@ class OppPage extends React.Component{
             <div className = 'PageText'> {this.state.content.Description} </div>
         
         
-            <div className = 'Cta'> 
+            <div className = 'CtaPage'> 
 
                     <CopyToClipboard text={"http://localhost:3000"+this.props.match.url}
                         onCopy={() => this.setState({copied: true})}>

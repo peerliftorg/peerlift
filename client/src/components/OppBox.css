@@ -81,20 +81,26 @@ text-overflow: ellipsis;
 
 .Cta{
 padding-top: 1vh;
-
-display: flex;
+display: grid;
 font-size: 22px;
+grid-template-columns: [firstC] 5% [secondC] 45% [thirdC] 50%;
+grid-template-rows: [firstR] 100%;
+
 
 }
 
 .Share{
-margin-right: 28vw;
 padding-left: 0.7em;
 
 }
 
 .ShareButton{
     height: 3.2vh;
+}
+
+.Apply{
+    justify-self:right;
+    padding-right: 0.5em;
 }
 
 a{
@@ -112,7 +118,15 @@ a{
         margin-bottom: 1em;
     }
     
-
-    
         
     }
+
+
+    @media screen and (max-width: 500px){
+
+        .Apply{
+ 
+        }
+        
+            
+        }

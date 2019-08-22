@@ -81,18 +81,20 @@
 
   }
   
-  .Cta{
+  .CtaPage{
   padding-top: 1vh;
-  
-  display: flex;
-  font-size: 22px;
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: [firstC] 40% [secondC] 60%;
+    grid-template-rows: [firstR] 100%;
+
   
   }
   
   .SharePage{
-  margin-right: 28vw;
   outline: none;
-  border: 0px;
+  border: 0;
+  background-color: white;
   display: flex;
 
   }
@@ -106,6 +108,10 @@
 
 .mobileGoBack{
     display: none;
+}
+
+.Apply{
+
 }
   
 @media screen and (max-width: 650px){

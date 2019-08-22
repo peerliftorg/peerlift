@@ -13,7 +13,7 @@ class MobileNav extends React.Component{
               <ul id = "mobile-list">
                 <li id = "mobile-item"> <Link to="/scholarships">Scholarships</Link> </li>
                 <li id = "mobile-item"> <Link to="/">Summer Programs</Link> </li>
-                <li id = "mobile-item"><a href="#">Summer Programs</a></li>
+                <li id = "mobile-item"><a href="https://medium.com/peerlift" target="_blank">Resources </a></li>
               </ul>
             </div>
             </React.Fragment>

@@ -42,7 +42,7 @@ class MyNavbar extends React.Component{
             </div>
 
             <ul id="nav">
-              <li> <Link to="/">Home</Link> </li>
+              <li> <a href="https://medium.com/peerlift" target="_blank" >Resources </a> </li>
               <li><a href="#">Summer Programs</a></li>
               <li> <Link to="/scholarships">Scholarships</Link> </li>
             </ul>
