@@ -4,7 +4,7 @@
 }
 
 .rocket{
-    width: 40px;
+    width: 45px;
     height: 7.2vh;
 }
 
@@ -33,21 +33,31 @@ margin-left: 2em;
 
 }
 
+#SummerPrograms{
+    margin-bottom: 1em;
+
+}
+
 #Scholarships{
-    margin-bottom: 0.6em;
+    margin-bottom: 1em;
 }
 
 #Resources{
-    margin-bottom: 0.6em;
+    margin-bottom: 1em;
 
 }
 
 .Footer-bottom-wrapper{
-    display: flex;
-    flex-direction: row;
+    display: grid;
     margin-top: 2em;
     font-size: 16px;
+    grid-template-columns: [firstC] 85% [secondC] 15% ;
+    grid-template-rows: [firstR] 100%;
 
+}
+
+.Footer-bottom-contact{
+    justify-self: right;
 }
 
 

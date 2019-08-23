@@ -6,10 +6,6 @@ import OppBox from '../components/OppBox.js';
 import ConfirmButton from '../components/confirmButton';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import shareButton from '../images/share@2x.png';
-
-
-
-
 import { withRouter, page, Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 

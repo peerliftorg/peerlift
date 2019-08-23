@@ -50,7 +50,7 @@ class Home extends Component {
           </div>
         
         <div className = "description">
-            <div className = "description-title">Student powered</div>
+            <div className = "description-title">Student-powered</div>
             <div className = "description-text">We crowdsource quality content from students like you.   Discover and share opportunities on Peerlift. </div>
 
 
