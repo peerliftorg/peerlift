@@ -52,8 +52,6 @@ class OppPage extends React.Component{
 
       }
 
-      
-
     render() {
         //console.log(idString)
         console.log(this.props.page)
@@ -79,7 +77,9 @@ class OppPage extends React.Component{
             <div  className = 'Title'> {this.state.content.Title}</div>
         
             <div className = 'Tags'> 
-                    <div className = 'Data' id = 'Amount'> {this.state.content.DescriptionAmount}</div>
+                    <div className = 'Data' id = 'Amount'> {
+                        this.props.page == "scholarships" ? this.state.content.DescriptionAmount: this.state.content.FinancialAid}
+                        </div>
                     <div className = 'Data' id = 'Grade'>{this.state.content.Grade}</div>
             </div>
         

@@ -5,6 +5,7 @@ const summerSchema = mongoose.Schema({
     Title: String,
     Description: String,
     Link: String,
+    Amount: String,
     DescriptionDate: String,
     MetricDate: String,
     Grade: String,

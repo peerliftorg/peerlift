@@ -286,7 +286,7 @@ class Summer extends Component{
               <OppBox 
               id = {contact._id}
               title = {contact.Title}
-              amount = {contact.DescriptionAmount}
+              amount = {contact.FinancialAid}
               grade = {contact.Grade}
               date = {contact.DescriptionDate}
               link = {contact.Link}

@@ -7,3 +7,12 @@
     background-color: rgba(151, 151, 151, 0.4);
     z-index: 10;
 }
+
+@media screen and (max-width: 500px){
+
+    .backdrop{
+        display: none;
+    }
+
+    
+}

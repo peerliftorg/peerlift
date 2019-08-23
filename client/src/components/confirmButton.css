@@ -11,6 +11,7 @@ border-radius: 32px;
   position: fixed;
   top: 90%;
   left: 50%;
+  z-index: 10;
 
   transform: translate(-50%, -50%);
   -moz-animation: cssAnimation 0s ease-in 5s forwards;

@@ -65,6 +65,10 @@
         grid-template-rows: [firstR] 100%;
 
     }
+
+    .Navbar{
+        z-index: 12;
+    }
     #nav{
         display: none;
     }
