@@ -1,3 +1,5 @@
+//Not currently used: will place refactored code from Opps and summer.js for filtering logic here after refactoring.
+
 import React, {Component} from 'react'; 
 import '../components/filters.css';
 

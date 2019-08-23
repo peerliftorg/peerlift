@@ -1,10 +1,15 @@
+//This is a stateful React container that handles fetching scholarship data, sorting scholarships, 
+// filtering scholarships, and rendering these scholarships by mapping over each scholarship with OppBox.
+// See functions for more explanation.  "Contact" is currently the convention for the array of objects containing
+// scholarship data.
+
+
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
 import '../components/filters.css';
 import '../components/mobileFilter.css';
 import Filters from "../components/filters";
 import MobileFilter from "../components/mobileFilter";
-
 import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
 import OppPage from '../components/oppPage.js';
@@ -37,12 +42,9 @@ class Opps extends Component{
 
 
     };
-     // This binding is necessary to make `this` work in the callback-- added from tut
-     this.handleClickTag = this.handleClickTag.bind(this);
-     this.handleClickOpps = this.handleClickOpps.bind(this);
-
+    
   }
-
+  //This function handles fetching all scholarship data.  Then, it sorts the produced array in ascending order to the current date.
   componentDidMount() {
     fetch('http://localhost:9000/scholarships')
       .then(res => res.json())
@@ -59,50 +61,22 @@ class Opps extends Component{
           return e-f;
         })
         this.setState({ contacts: data })
-        //give constant a value
+        //Define a constant state of the data, that we'll use to reset the state when needed.
         this.setState({ contacts_const: data })
       })
       .catch(console.log)
   }
 
-        //toggle mobile filters
+        //This function sets a bool state of whether mobile filters are active or not, 
+        //triggering conditional rendering.
          handleClickFilters(){
             this.setState({filters: !this.state.filters});
-
-          
         }
 
 
-        //grab a given element's ID, 
-        handleClickOpps(oppId){
-            this.setState({onOpp: !this.state.onOpp});
-            this.setState({activeId: oppId});
-             console.log('hola')
-
-        }
-
-
-        //filter tags
-        handleClickTag(word) {
-        //set the state of contacts at the end
-        if (!this.state.onStem){
-            //const word = "STEM";
-            //filter from contacts_consc to ensure always from fullset
-            const array = this.state.contacts_const;
-            const arrayTwo = array.filter(item => {
-                //console.log(item.Tags)
-                return item.Tags.includes(word);
-              })    
-            this.setState({contacts:arrayTwo})
-            this.setState({onStem:!this.state.onStem})
-            console.log(this.state.onStem)
-        }
-        else{
-            this.setState({contacts:this.state.contacts_const})
-            this.setState({onStem:!this.state.onStem})
-        }
-    }
-    //for year
+    //This function handles filtering logic for the stem tag.  If the stem filter is clicked,
+    // this function creates a copy of the current scholarships array, then filters to include
+    // based on the given word.  If not, the state is reset, and scholarships data is reset to its original state.
     handleClickStem(word) {
         //code for onStem
         if (!this.state.onStem){
@@ -265,6 +239,8 @@ class Opps extends Component{
             <div className = "title"> Tags:</div>
             <div className = "tag-grid"> 
 
+            {/* Each segment below checks if a filter button is active, assigns appropriate styling, and triggers
+            a rerender with the corresponding handleClick function. */}
             <div className = "stem tag-text">STEM </div>
             <button className={this.state.onStem ? "button-clicked stemButton": "filter-button stemButton "} onClick={() => this.handleClickStem(word = "STEM")}>
             {this.state.onStem && <img src = {this.state.filters ? blackcheck:check}></img>}  </button>
@@ -293,10 +269,10 @@ class Opps extends Component{
           <AddOpp></AddOpp>
 
           <div className = "opp-box-wrapper"> 
-
+            {/* Map over the array of scholarship objects, and provide all data as props for OppBox. */}
            {this.state.contacts.map((contact) =>
              <React.Fragment> 
-            
+        
              {/* <Route exact path = "/scholarships/:id"  component = {OppPage} >  */}
              <Link to = {`/scholarships/${contact._id}`}>
 
@@ -316,7 +292,6 @@ class Opps extends Component{
               </React.Fragment>
 
             )};
-
         </div>
         </div>
         </div>
@@ -326,11 +301,3 @@ class Opps extends Component{
 
 export default withRouter(Opps);
 
-
-// const SmartButton = ( {contacts} ) => {
-    
-//     return(
-//         <button className = "filter-button" >Click Me </button>
-
-//     )
-//   }

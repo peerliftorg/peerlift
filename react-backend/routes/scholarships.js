@@ -1,16 +1,18 @@
+//This file contains the API calls to connect to the mongodb scholarships collection.
+//Contains a GET request to get all scholarships, GET request to get scholarships by ID
+// Additionally file contains a POST request for users to add their own scholarships.
+
+
 var express = require('express');
 var router = express.Router();
-const Opp = require('../opp');
-const Add = require('../add');
+const Scholarships = require('../scholarshipSchema');
+const Add = require('../addSchema');
 const Summer = require('../summerSchema');
-
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
 //from body-parser tut
 // create application/json parser
 var jsonParser = bodyParser.json()
-
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -18,11 +20,9 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 /* GET users listing. */
 //find all scholarships from .scholarships
 router.get('/', (req, res, next) => {
-  Opp.find()
+  Scholarships.find()
     .exec()
-    //.then(sort({deadline:-1}))
     .then(doc => {
-      //console.log(doc);
       res.status(200).json(doc);
     })
 
@@ -30,8 +30,6 @@ router.get('/', (req, res, next) => {
       console.log(err);
       res.status(500);
     });
-  
-  //});
 });
 
 
@@ -39,7 +37,7 @@ router.get('/', (req, res, next) => {
 router.get('/:oppId', (req,res,next) => {
   const id = req.params.oppId;
   
-  Opp.findById(id)
+  Scholarships.findById(id)
     .exec()
     .then(doc => {
       res.status(200).json(doc);
@@ -51,10 +49,6 @@ router.get('/:oppId', (req,res,next) => {
     });
 
 });
-
-//Get request for all summer programs
-
-//Get request for summer programs by ID
 
 
 router.post('/', (req, res, next) => {

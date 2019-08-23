@@ -1,3 +1,8 @@
+//This stateful react component uses two props:  match.url from React router to generate unique URLs for each opppage,
+// and page, which defines whether exiting the button should lead to scholarships or summer programs.
+//  Given an ID of an opportunity, this component fetches the accompanying data, and displays it in a modal box that appears onClick from 
+// Opps.JS or summer.js. 
+
 import React, {Component} from 'react'; 
 import '../components/oppPage.css';
 import Backdrop from '../components/backdrop.js';
@@ -9,9 +14,6 @@ import shareButton from '../images/share@2x.png';
 import { withRouter, page, Link, BrowserRouter as Router, Route } from 'react-router-dom';
 
 
-//can I store product ID as a variable in return? 
-// //This is a constructor for a component 
-
 class OppPage extends React.Component{
 
     constructor(props){
@@ -21,9 +23,7 @@ class OppPage extends React.Component{
             copied: false
             //id : this.props.match.params.id
         };
-        this.copyToClipboard = this.copyToClipboard.bind(this);
     }
-
 
     componentDidMount() {
         //let idString = this.props.id;
@@ -34,23 +34,10 @@ class OppPage extends React.Component{
           })
           .catch(console.log)
       }
-      //given a URL, this copies to clipboard 
-      copyToClipboard = (e) =>{
-        // this.e.select();
-        var url = this.props.match.url;
-        // this.props.match.url.select();
-        url.select();
-        document.execCommand('copy');
-
-        console.log(url);
-
-        //e.target.focus();
-
-      }
-
+ 
     render() {
         //console.log(idString)
-        console.log(this.props.page)
+        //console.log(this.props.page)
         //console.log(this.state.content)
         // console.log(this.props.match.params.id)
         var e;
@@ -62,8 +49,6 @@ class OppPage extends React.Component{
             <Backdrop/> 
             </Link>
 
-            
-
              <div className = "OppPageWrapper"  >
              
              <Link to = {"/" + this.props.page}>
@@ -71,7 +56,7 @@ class OppPage extends React.Component{
             </Link>
         
             <div  className = 'Title'> {this.state.content.Title}</div>
-        
+            {/* Amount is conditionally rendered depending on the value of props.page to display amount, or financial aid.*/}
             <div className = 'Tags'> 
                     <div className = 'Data' id = 'Amount'> {
                         this.props.page == "scholarships" ? this.state.content.DescriptionAmount: this.state.content.FinancialAid}
@@ -84,6 +69,7 @@ class OppPage extends React.Component{
         
         
             <div className = 'CtaPage'> 
+                    {/* Code below enables users to copy to clipboard, and view a confirmation button that appears.*/}
 
                     <CopyToClipboard text={"http://localhost:3000"+this.props.match.url}
                         onCopy={() => this.setState({copied: true})}>
@@ -104,9 +90,6 @@ class OppPage extends React.Component{
                      ></ConfirmButton>
                       </React.Fragment>
                      : null}
-         
-                     
-
             </div>
         );
     }

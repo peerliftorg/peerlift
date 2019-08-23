@@ -1,3 +1,5 @@
+//Defines a Mongoose schema to model summer programs data that is displayed to users in /summerprograms.
+
 const mongoose = require('mongoose');
 
 const summerSchema = mongoose.Schema({

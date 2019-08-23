@@ -1,3 +1,9 @@
+//This is a stateful React container that handles fetching summerprogram data, sorting summerprograms, 
+// filtering summer programs, and rendering these summerprograms  by mapping over each program with OppBox.
+// See functions for more explanation.  "Contact" is currently the convention for the array of objects containing
+// summer program data. Code logic is identical to Opps.JS except for variable names and what is passed to oppBox.
+
+
 import React, {Component} from 'react'; 
 import '../components/OppBox.css';
 import '../components/filters.css';
@@ -35,9 +41,7 @@ class Summer extends Component{
   
   
       };
-       // This binding is necessary to make `this` work in the callback-- added from tut
-       this.handleClickTag = this.handleClickTag.bind(this);
-       this.handleClickOpps = this.handleClickOpps.bind(this);
+     
   
     }
   
@@ -71,35 +75,6 @@ class Summer extends Component{
           }
   
   
-          //grab a given element's ID, 
-          handleClickOpps(oppId){
-              this.setState({onOpp: !this.state.onOpp});
-              this.setState({activeId: oppId});
-               console.log('hola')
-  
-          }
-  
-  
-          //filter tags
-          handleClickTag(word) {
-          //set the state of contacts at the end
-          if (!this.state.onStem){
-              //const word = "STEM";
-              //filter from contacts_consc to ensure always from fullset
-              const array = this.state.contacts_const;
-              const arrayTwo = array.filter(item => {
-                  //console.log(item.Tags)
-                  return item.Tags.includes(word);
-                })    
-              this.setState({contacts:arrayTwo})
-              this.setState({onStem:!this.state.onStem})
-              console.log(this.state.onStem)
-          }
-          else{
-              this.setState({contacts:this.state.contacts_const})
-              this.setState({onStem:!this.state.onStem})
-          }
-      }
       //for year
       handleClickStem(word) {
           //code for onStem

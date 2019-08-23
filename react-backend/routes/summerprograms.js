@@ -1,16 +1,14 @@
+//This file contains the API calls to connect to the mongodb summer_programs collection.
+//Contains a GET request to get all summer programs, GET request to get programs by ID
+
+
 var express = require('express');
 var router = express.Router();
-const Opp = require('../opp');
-const Add = require('../add');
 const Summer = require('../summerSchema');
-
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-
-//from body-parser tut
 // create application/json parser
 var jsonParser = bodyParser.json()
-
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -51,11 +49,6 @@ router.get('/:oppId', (req,res,next) => {
     });
 
 });
-
-//Get request for all summer programs
-
-//Get request for summer programs by ID
-
 
 
 router.patch('/', (req, res, next) => {

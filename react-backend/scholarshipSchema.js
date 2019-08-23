@@ -1,6 +1,8 @@
+//Defines a Mongoose schema to model scholarship data that is displayed to users in /scholarships.
+
 const mongoose = require('mongoose');
 
-const oppSchema = mongoose.Schema({
+const scholarshipSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
     Title: String,
     Description: String,
@@ -17,4 +19,4 @@ const oppSchema = mongoose.Schema({
 {collection: 'scholarships'}
 );
 
-module.exports = mongoose.model('Opp',oppSchema);
+module.exports = mongoose.model('Scholarships',scholarshipSchema);

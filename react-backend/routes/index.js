@@ -1,3 +1,5 @@
+//This file is used for testing purposes to display a webpage when the local Express server is active.
+
 var express = require('express');
 var router = express.Router();
 

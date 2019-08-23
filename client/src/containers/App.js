@@ -1,3 +1,6 @@
+//This file is currently a wrapper to display scholarships.  The main logic of displaying and sorting scholarships is in opps.js, while 
+// this page attaches a navbar and footer, and creates routes for scholarships.
+
 import React, { Component } from 'react';
 //to use react router to set up SPA
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,15 +17,7 @@ import Backdrop from "../components/backdrop";
 import Home from "../containers/home.js";
 
 
-
-//helper function that takes a substring, and checks whether a string in an array contains this substr
-// function filterBySubstring(substr){
-//   var tagString = contacts.Tags;
-//   return tagString.includes(substr);
-// }
-
 class App extends Component {
-
   //adding constructor from tut
   constructor(props){
     super(props);
@@ -43,12 +38,6 @@ class App extends Component {
           render={(props) => <OppPage {...props} page={'scholarships'} />} /> 
 
         <Footer></Footer>
-
-      
-        {/* <Switch> 
-            <Route exact path="/" component={Home} />
-            <Route path="/scholarships" component={App} />
-        </Switch> */}
      
       </div>
   );

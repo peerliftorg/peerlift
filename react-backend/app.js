@@ -1,3 +1,5 @@
+//Main file to create Express server, configure routes, forward traffic, connect mongodb,and catch errors.
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -17,20 +19,18 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-
 //Set up my routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/scholarships');
 var summerRouter = require('./routes/summerprograms');
 
-//Forward traffic to usersRouter
+//Forward traffic to appropriate routers
 app.use('/', indexRouter);
 app.use('/scholarships', usersRouter);
 app.use('/summerprograms', summerRouter);
 
 
-
+//This code connects our mongodb database to the express server
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/peerlift?retryWrites=true&w=majority')
   .then(() => {
@@ -46,7 +46,6 @@ mongoose.connect('mongodb+srv://peerlift:atheno75@pl-connect-0azku.mongodb.net/p
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
