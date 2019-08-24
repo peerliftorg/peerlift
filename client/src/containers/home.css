@@ -82,6 +82,14 @@ padding-top: 8em;
 .img-hero{
 }
 
+.img-caption{
+    grid-column-start: thirdC;
+    grid-column-end: fifthC;
+    grid-row-start: fifthR;
+    grid-row-end: fifthR;
+    margin-top: 2em;
+}
+
 #amel{
     width: 22vw;
     z-index: 3;
@@ -100,9 +108,6 @@ padding-top: 8em;
     grid-row-start: fourthR;
     grid-row-end: sixthR;
     opacity: 0.8;
-    
-
-    
 }
 
 
@@ -216,6 +221,18 @@ padding-top: 8em;
     }
         
     }
+
+
+    @media screen and (max-width: 700px){
+    
+        .img-caption{
+            grid-column-start: fifthC;
+            grid-column-end: seventhC;
+            margin-top: 0;
+        }
+            
+        }
+
 
 
     @media screen and (max-width: 400px){
