@@ -223,6 +223,7 @@ class Opps extends Component{
 
     return(
         <div className = "filter-opp-wrapper">
+        {/* Set to display: none on desktop */}
             <MobileFilter onPress={() => this.handleClickFilters()}></MobileFilter>
 
           <div className = {this.state.filters ? "full-filter-clicked": "full-filter-wrapper"}> 
