@@ -27,7 +27,7 @@ class OppPage extends React.Component{
 
     componentDidMount() {
         //let idString = this.props.id;
-        fetch('http://localhost:9000/api' + this.props.match.url)
+        fetch('/api' + this.props.match.url)
           .then(res => res.json())
           .then((data) => {
             this.setState({ content: data })
@@ -37,7 +37,7 @@ class OppPage extends React.Component{
  
     render() {
         //console.log(idString)
-        //console.log(this.props.page)
+        console.log(this.props)
         //console.log(this.state.content)
         // console.log(this.props.match.params.id)
         var e;
