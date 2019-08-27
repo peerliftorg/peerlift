@@ -27,7 +27,7 @@ class OppPage extends React.Component{
 
     componentDidMount() {
         //let idString = this.props.id;
-        fetch('http://localhost:9000' + this.props.match.url)
+        fetch('http://localhost:9000/api' + this.props.match.url)
           .then(res => res.json())
           .then((data) => {
             this.setState({ content: data })
@@ -71,7 +71,7 @@ class OppPage extends React.Component{
             <div className = 'CtaPage'> 
                     {/* Code below enables users to copy to clipboard, and view a confirmation button that appears.*/}
 
-                    <CopyToClipboard text={"http://localhost:3000"+this.props.match.url}
+                    <CopyToClipboard text={"http://localhost:3000"+ this.props.match.url}
                         onCopy={() => this.setState({copied: true})}>
 
                         <button className = 'SharePage' >
