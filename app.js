@@ -20,12 +20,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Set up my routes
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/scholarships');
 var summerRouter = require('./routes/summerprograms');
 
 //Forward traffic to appropriate routers
-app.use('/', indexRouter);
 app.use('/scholarships', usersRouter);
 app.use('/summerprograms', summerRouter);
 

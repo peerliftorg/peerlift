@@ -11,6 +11,11 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
+
+  "engines": {
+    "node": "10.x"
+  },
+  
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",
     "build": "react-scripts build",

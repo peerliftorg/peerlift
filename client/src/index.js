@@ -7,10 +7,6 @@ import Notfound from './components/notFound';
 import OppPage from './components/oppPage.js';
 import Opps from './containers/Opps.js';
 import Summer from './containers/summer.js';
-
-
-
-
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
