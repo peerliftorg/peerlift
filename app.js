@@ -24,8 +24,8 @@ var usersRouter = require('./routes/scholarships');
 var summerRouter = require('./routes/summerprograms');
 
 //Forward traffic to appropriate routers
-app.use('/scholarships', usersRouter);
-app.use('/summerprograms', summerRouter);
+app.use('/api/scholarships', usersRouter);
+app.use('/api/summerprograms', summerRouter);
 
     app.use(express.static('client/build'));
 

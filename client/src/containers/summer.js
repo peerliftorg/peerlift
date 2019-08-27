@@ -46,7 +46,7 @@ class Summer extends Component{
     }
   
     componentDidMount() {
-      fetch('http://localhost:9000/summerprograms')
+      fetch('http://localhost:9000/api/summerprograms')
         .then(res => res.json())
         .then((data) => {
           //data is an array, let's sort it by closest to current date

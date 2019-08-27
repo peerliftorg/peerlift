@@ -46,7 +46,7 @@ class Opps extends Component{
   }
   //This function handles fetching all scholarship data.  Then, it sorts the produced array in ascending order to the current date.
   componentDidMount() {
-    fetch('http://localhost:9000/scholarships')
+    fetch('http://localhost:9000/api/scholarships')
       .then(res => res.json())
       .then((data) => {
         //data is an array, let's sort it by closest to current date
