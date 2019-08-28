@@ -238,10 +238,12 @@ padding-top: 4em;
     @media screen and (max-width: 400px){
     
         .hero-title-sub{
+            display: flex;
+            flex-direction: column;
         }
 
         .hero-sub{
-            margin-top: 3.5em;
+            margin-top: 8em;
         }
             
         }
