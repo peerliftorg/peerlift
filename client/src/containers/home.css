@@ -238,7 +238,10 @@ padding-top: 4em;
     @media screen and (max-width: 400px){
     
         .hero-title-sub{
-            margin-top: 6em;
+        }
+
+        .hero-sub{
+            margin-top: 3.5em;
         }
             
         }
