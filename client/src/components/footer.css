@@ -52,7 +52,7 @@ margin-left: 2em;
     margin-top: 2em;
     font-size: 16px;
     grid-template-columns: [firstC] 85% [secondC] 15% ;
-    grid-template-rows: [firstR] 100%;
+    grid-template-rows: [firstR] 50% [secondR] 50%;
 
 }
 
@@ -64,15 +64,32 @@ margin-left: 2em;
 @media screen and (max-width: 500px){
 
     .Footer-wrapper{
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 2em;
+        margin-right: 2em;
         margin-top: 4em;
        
 
     }
 
+    .Content-wrapper{
+        flex-direction: column;
+    }
+
+    .Text-wrapper{
+        margin-left: 0;
+    }
+
     .rocket{
         width: 40px;
+        margin-bottom: 2em;
+    }
+
+    .Footer-bottom-contact{
+        grid-row-start: secondR;
+        grid-row-end: secondR;
+        justify-self: left;
+        margin-top: 1em;
+
     }
 
     

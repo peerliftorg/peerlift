@@ -28,7 +28,7 @@ class Footer extends Component{
         </div>
 
         <div className = "Footer-bottom-wrapper"> 
-            <div className = "Footer-bottom-text">Built with ❤️ and scholarship 💰. </div>
+            <div className = "Footer-bottom-text">Built with ❤️ and scholarship 💰 </div>
             <div className = "Footer-bottom-contact">contact@peerlift.org </div>
         </div>
 
