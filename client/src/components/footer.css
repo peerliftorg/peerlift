@@ -26,6 +26,7 @@ margin-left: 2em;
 .Footer-content{
 font-size: 18px;
 font-weight: 800;
+margin-bottom: 1em;
 }
 
 .Cat-two{
@@ -46,6 +47,13 @@ margin-left: 2em;
     margin-bottom: 1em;
 
 }
+
+#feedback{
+  margin-bottom: 1em;
+}
+
+
+
 
 .Footer-bottom-wrapper{
     display: grid;

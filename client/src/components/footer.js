@@ -18,7 +18,9 @@ class Footer extends Component{
                 <div className = "Cat-one"> 
                     <Link to = "/scholarships"> <div className = "Footer-content" id = "Scholarships">Scholarships</div> </Link>
                     <Link to = "/summerprograms"> <div className = "Footer-content" id = "SummerPrograms">Summer Programs </div> </Link>
-                    <a className = "Footer-content" id = "Resources" href="https://medium.com/peerlift" target="_blank" >Resources </a>
+                    <div className = "Footer-content"> <a className = "Footer-content" id = "Resources" href="https://medium.com/peerlift" target="_blank" >Resources </a> </div>
+                    <div className = "Footer-content"> <a className = "Footer-content" id = "feedback" href="https://peerlift.canny.io/share" target="_blank" >Share Feedback 🙌 </a> </div>
+
 
                 </div>
 
