@@ -235,7 +235,7 @@ padding-top: 4em;
 
 
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 450px){
     
         .hero-title-sub{
             display: flex;
