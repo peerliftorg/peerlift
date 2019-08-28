@@ -37,7 +37,7 @@ class OppPage extends React.Component{
  
     render() {
         //console.log(idString)
-        console.log(this.props)
+        console.log(this.props.page)
         //console.log(this.state.content)
         // console.log(this.props.match.params.id)
         var e;
@@ -71,7 +71,7 @@ class OppPage extends React.Component{
             <div className = 'CtaPage'> 
                     {/* Code below enables users to copy to clipboard, and view a confirmation button that appears.*/}
 
-                    <CopyToClipboard text={"http://localhost:3000"+ this.props.match.url}
+                    <CopyToClipboard text={"https://peerlift.org"+ this.props.match.url}
                         onCopy={() => this.setState({copied: true})}>
 
                         <button className = 'SharePage' >
