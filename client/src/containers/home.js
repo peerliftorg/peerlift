@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import MyNavbar from '../components/nav.js';
 import Footer from "../components/footer";
 import '../containers/home.css';
-import carmen from '../images/carmen@2x.svg';
-import amel from '../images/amel@2x.svg';
-import shirt from '../images/shirt@2x.svg';
+import carmen from '../images/carmen@2x.png';
+import amel from '../images/amel@2x.png';
+import shirt from '../images/shirt@2x.png';
 import menu from '../images/menu@2x.svg';
 
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
