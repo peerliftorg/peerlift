@@ -238,7 +238,7 @@ padding-top: 4em;
     @media screen and (max-width: 400px){
     
         .hero-title-sub{
-            grid-gap: 50px 20px;
+            margin-top: 3em;
         }
             
         }
