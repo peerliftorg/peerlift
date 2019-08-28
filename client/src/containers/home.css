@@ -238,8 +238,7 @@ padding-top: 4em;
     @media screen and (max-width: 400px){
     
         .hero-title-sub{
-            grid-template-rows: [firstR] 80% [secondR] 20%;
-            grid-gap: 30px 20px;
+            grid-gap: 50px 20px;
         }
             
         }
