@@ -248,7 +248,9 @@ class Summer extends Component{
   
             <div className = "add-box-wrapper"> 
   
-            <AddOpp></AddOpp>
+            <AddOpp
+            title = "summer program">
+            </AddOpp>
   
             <div className = "opp-box-wrapper"> 
   

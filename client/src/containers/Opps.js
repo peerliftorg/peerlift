@@ -267,7 +267,9 @@ class Opps extends Component{
 
           <div className = "add-box-wrapper"> 
 
-          <AddOpp></AddOpp>
+          <AddOpp
+          title = "scholarship"
+          ></AddOpp>
 
           <div className = "opp-box-wrapper"> 
             {/* Map over the array of scholarship objects, and provide all data as props for OppBox. */}

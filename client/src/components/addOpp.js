@@ -25,7 +25,7 @@ class AddOpp extends Component{
     submitHandler = e => {
         e.preventDefault()
         console.log("should input test data" +this.state)
-        fetch('http://localhost:9000/users', {
+        fetch('/api/scholarships', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -43,7 +43,7 @@ class AddOpp extends Component{
         const {name} = this.state
         return (
             <div className = "FormContainer"> 
-            <div className = "OppText">🤑 Add a scholarship </div>
+            <div className = "OppText">🤑 Add a {this.props.title} </div>
             <form onSubmit= {this.submitHandler} className = "Form">
                 <input className = "FormInput" type = "text" placeholder = "What's it called?" value ={this.state.name} onChange = {this.changeHandler}>
                 </input>
