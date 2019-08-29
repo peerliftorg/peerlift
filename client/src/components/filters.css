@@ -53,9 +53,9 @@
 
 .tag-grid{
     display: grid;
-    grid-template-columns: [firstC] 25% [secondC] 25% [thirdC] 25% [fourthC] 25% ;
-    grid-template-rows: [firstR] 25% [secondR] 25% [thirdR] 25% [fourthR] 25% ;
-    grid-gap: 20px 20px;
+    grid-template-columns: [firstC] 3em [secondC] 3em [thirdC] 3em [fourthC] 3em ;
+    grid-template-rows: [firstR] 2em [secondR] 2em [thirdR] 2em [fourthR] 2em ;
+    grid-gap: 3em 20px;
 }
 
 .stem{
