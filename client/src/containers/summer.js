@@ -19,6 +19,8 @@ import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-
 import check from '../images/check@2x.svg';
 import blackcheck from '../images/blackcheck@2x.svg';
 import Footer from "../components/footer";
+import NoResults from '../components/noResults.js';
+
 
 
 class Summer extends Component{
@@ -29,6 +31,7 @@ class Summer extends Component{
         contacts: [],
         contacts_const: [],
         activeId: "",
+        isEmpty: false,
         filters: false,
         onOpp: false,
         onPreCollege: false,
@@ -77,7 +80,9 @@ class Summer extends Component{
   
       //for year
       handleClickStem(word) {
-          //code for onStem
+
+          this.setState({isEmpty:false});
+
           if (!this.state.onStem){
               //take the modified contact list
               const array = this.state.contacts;
@@ -86,6 +91,10 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onStem:!this.state.onStem})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
+              
           }
           else if (this.state.onStem){
               this.setState({contacts:this.state.contacts_const})
@@ -95,7 +104,7 @@ class Summer extends Component{
   
   
       handleClickPreCollege(word) {
-          //code for onStem
+        this.setState({isEmpty:false});
           if (!this.state.onPreCollege){
               //take the modified contact list
               const array = this.state.contacts;
@@ -104,6 +113,9 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onPreCollege:!this.state.onPreCollege})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
           }
           else if (this.state.onPreCollege){
               this.setState({contacts:this.state.contacts_const})
@@ -112,7 +124,7 @@ class Summer extends Component{
       }
   
       handleClickLeadership(word) {
-          //code for onStem
+        this.setState({isEmpty:false});
           if (!this.state.onLeadership){
               //take the modified contact list
               const array = this.state.contacts;
@@ -121,6 +133,9 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onLeadership:!this.state.onLeadership})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
           }
           else if (this.state.onLeadership){
               this.setState({contacts:this.state.contacts_const})
@@ -129,7 +144,7 @@ class Summer extends Component{
       }
   
       handleClickNine(word) {
-          //code for onStem
+        this.setState({isEmpty:false});
           if (!this.state.onNine){
               //take the modified contact list
               const array = this.state.contacts;
@@ -138,6 +153,9 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onNine:!this.state.onNine})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
           }
           else if (this.state.onNine){
               this.setState({contacts:this.state.contacts_const})
@@ -146,7 +164,7 @@ class Summer extends Component{
       }
   
       handleClickTen(word) {
-          //code for onStem
+        this.setState({isEmpty:false});
           if (!this.state.onTen){
               //take the modified contact list
               const array = this.state.contacts;
@@ -155,6 +173,9 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onTen:!this.state.onTen})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
           }
           else if (this.state.onTen){
               this.setState({contacts:this.state.contacts_const})
@@ -163,7 +184,7 @@ class Summer extends Component{
       }
   
       handleClickEleven(word) {
-          //code for onStem
+        this.setState({isEmpty:false});
           if (!this.state.onEleven){
               //take the modified contact list
               const array = this.state.contacts;
@@ -172,6 +193,9 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onEleven:!this.state.onEleven})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
           }
           else if (this.state.onEleven){
               this.setState({contacts:this.state.contacts_const})
@@ -180,7 +204,7 @@ class Summer extends Component{
       }
   
       handleClickTwelve(word) {
-          //code for onStem
+        this.setState({isEmpty:false});
           if (!this.state.onTwelve){
               //take the modified contact list
               const array = this.state.contacts;
@@ -189,6 +213,9 @@ class Summer extends Component{
                 })    
               this.setState({contacts:arrayTwo})
               this.setState({onTwelve:!this.state.onTwelve})
+              if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
           }
           else if (this.state.onTwelve){
               this.setState({contacts:this.state.contacts_const})
@@ -202,7 +229,7 @@ class Summer extends Component{
       //we want to reset value to normal
       var word;
       var oppId;
-      console.log(this.state.filters);
+     // console.log(this.state.filters);
   
       return(
           <div className = "wrapper">
@@ -253,6 +280,9 @@ class Summer extends Component{
             </AddOpp>
   
             <div className = "opp-box-wrapper"> 
+
+            {this.state.isEmpty &&
+            <NoResults></NoResults>}
   
              {this.state.contacts.map((contact) =>
                <React.Fragment> 

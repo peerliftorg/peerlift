@@ -12,6 +12,8 @@ import Filters from "../components/filters";
 import MobileFilter from "../components/mobileFilter";
 import OppBox from '../components/OppBox';
 import AddOpp from '../components/addOpp.js';
+import NoResults from '../components/noResults.js';
+
 import OppPage from '../components/oppPage.js';
 import Backdrop from '../components/backdrop.js';
 import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -30,6 +32,7 @@ class Opps extends Component{
       contacts_const: [],
       activeId: "",
       filters: false,
+      isEmpty: false,
       onOpp: false,
       onStem: false,
       onLowIncome: false,
@@ -79,6 +82,9 @@ class Opps extends Component{
     // based on the given word.  If not, the state is reset, and scholarships data is reset to its original state.
     handleClickStem(word) {
         //code for onStem
+        //on click, make sure that empty is false
+        this.setState({isEmpty:false});
+
         if (!this.state.onStem){
             //take the modified contact list
             const array = this.state.contacts;
@@ -87,6 +93,11 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onStem:!this.state.onStem})
+            //if arrayTwo is empty, change the state
+            console.log("test length"+ arrayTwo.length);
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onStem){
             this.setState({contacts:this.state.contacts_const})
@@ -95,7 +106,9 @@ class Opps extends Component{
     }
 
     handleClickService(word) {
-        //code for onStem
+
+        this.setState({isEmpty:false});
+
         if (!this.state.onService){
             //take the modified contact list
             const array = this.state.contacts;
@@ -104,6 +117,10 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onService:!this.state.onService})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onService){
             this.setState({contacts:this.state.contacts_const})
@@ -113,6 +130,9 @@ class Opps extends Component{
 
     handleClickLi(word) {
         //code for onStem
+
+        this.setState({isEmpty:false});
+
         if (!this.state.onLowIncome){
             //take the modified contact list
             const array = this.state.contacts;
@@ -121,6 +141,10 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onLowIncome:!this.state.onLowIncome})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onLowIncome){
             this.setState({contacts:this.state.contacts_const})
@@ -129,7 +153,9 @@ class Opps extends Component{
     }
 
     handleClickDiversity(word) {
-        //code for onStem
+
+        this.setState({isEmpty:false});
+
         if (!this.state.onDiversity){
             //take the modified contact list
             const array = this.state.contacts;
@@ -138,6 +164,10 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onDiversity:!this.state.onDiversity})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onDiversity){
             this.setState({contacts:this.state.contacts_const})
@@ -146,7 +176,8 @@ class Opps extends Component{
     }
 
     handleClickNine(word) {
-        //code for onStem
+        this.setState({isEmpty:false});
+
         if (!this.state.onNine){
             //take the modified contact list
             const array = this.state.contacts;
@@ -155,6 +186,10 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onNine:!this.state.onNine})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onNine){
             this.setState({contacts:this.state.contacts_const})
@@ -163,7 +198,9 @@ class Opps extends Component{
     }
 
     handleClickTen(word) {
-        //code for onStem
+
+        this.setState({isEmpty:false});
+
         if (!this.state.onTen){
             //take the modified contact list
             const array = this.state.contacts;
@@ -172,6 +209,11 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onTen:!this.state.onTen})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
+            
         }
         else if (this.state.onTen){
             this.setState({contacts:this.state.contacts_const})
@@ -180,7 +222,8 @@ class Opps extends Component{
     }
 
     handleClickEleven(word) {
-        //code for onStem
+        this.setState({isEmpty:false});
+
         if (!this.state.onEleven){
             //take the modified contact list
             const array = this.state.contacts;
@@ -189,6 +232,10 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onEleven:!this.state.onEleven})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onEleven){
             this.setState({contacts:this.state.contacts_const})
@@ -197,7 +244,8 @@ class Opps extends Component{
     }
 
     handleClickTwelve(word) {
-        //code for onStem
+        this.setState({isEmpty:false});
+
         if (!this.state.onTwelve){
             //take the modified contact list
             const array = this.state.contacts;
@@ -206,6 +254,10 @@ class Opps extends Component{
               })    
             this.setState({contacts:arrayTwo})
             this.setState({onTwelve:!this.state.onTwelve})
+
+            if (arrayTwo === undefined || arrayTwo == 0) {
+                this.setState({isEmpty: true})
+            }
         }
         else if (this.state.onTwelve){
             this.setState({contacts:this.state.contacts_const})
@@ -219,7 +271,7 @@ class Opps extends Component{
     //we want to reset value to normal
     var word;
     var oppId;
-    console.log(this.state.filters);
+    console.log(this.state.isEmpty);
 
     return(
         <div className = "filter-opp-wrapper">
@@ -272,6 +324,8 @@ class Opps extends Component{
           ></AddOpp>
 
           <div className = "opp-box-wrapper"> 
+            {this.state.isEmpty &&
+            <NoResults></NoResults>}
             {/* Map over the array of scholarship objects, and provide all data as props for OppBox. */}
            {this.state.contacts.map((contact) =>
              <React.Fragment> 
