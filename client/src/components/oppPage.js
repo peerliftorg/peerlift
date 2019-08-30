@@ -71,7 +71,7 @@ class OppPage extends React.Component{
             <div className = 'CtaPage'> 
                     {/* Code below enables users to copy to clipboard, and view a confirmation button that appears.*/}
 
-                    <CopyToClipboard text={"https://peerlift.org"+ this.props.match.url}
+                    <CopyToClipboard text={"https://www.peerlift.org"+ this.props.match.url}
                         onCopy={() => this.setState({copied: true})}>
 
                         <button className = 'SharePage' >
