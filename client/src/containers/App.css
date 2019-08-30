@@ -7,7 +7,10 @@
     border-top: 1vh;
     border-top-color: rgba(133, 199, 255, 0.3);
     border-top-style: solid;
-    height: 100%
+}
+
+.opp-box-wrapper-no-result{
+    padding-bottom: 40em;
 }
 
 .filter-opp-wrapper{

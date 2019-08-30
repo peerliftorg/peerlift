@@ -264,11 +264,8 @@ class Summer extends Component{
               <button className={this.state.onStem ? "button-clicked diversityButton": "filter-button diversityButton " } onClick={() => this.handleClickStem(word = "stem")}>
               {this.state.onStem && <img src = {this.state.filters ? blackcheck:check}></img>}  </button> 
   
-             
-  
               </div>
             
-  
             </div>
       
               
@@ -279,7 +276,7 @@ class Summer extends Component{
             title = "summer program">
             </AddOpp>
   
-            <div className = "opp-box-wrapper"> 
+            <div className = {this.state.isEmpty ? "opp-box-wrapper-no-result opp-box-wrapper": "opp-box-wrapper "}> 
 
             {this.state.isEmpty &&
             <NoResults></NoResults>}

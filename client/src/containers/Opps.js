@@ -94,7 +94,6 @@ class Opps extends Component{
             this.setState({contacts:arrayTwo})
             this.setState({onStem:!this.state.onStem})
             //if arrayTwo is empty, change the state
-            console.log("test length"+ arrayTwo.length);
             if (arrayTwo === undefined || arrayTwo == 0) {
                 this.setState({isEmpty: true})
             }
@@ -323,8 +322,8 @@ class Opps extends Component{
           title = "scholarship"
           ></AddOpp>
 
-          <div className = "opp-box-wrapper"> 
-            {this.state.isEmpty &&
+          <div className = {this.state.isEmpty ? "opp-box-wrapper-no-result opp-box-wrapper": "opp-box-wrapper "}> 
+            {this.state.isEmpty  &&
             <NoResults></NoResults>}
             {/* Map over the array of scholarship objects, and provide all data as props for OppBox. */}
            {this.state.contacts.map((contact) =>
