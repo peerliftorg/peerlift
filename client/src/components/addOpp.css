@@ -1,5 +1,10 @@
 .FormContainer{
     justify-self: center;
+    padding-bottom: 3em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+
+
 
 }
 
@@ -35,3 +40,11 @@
     color: #105FA1;
     outline:0;
 }
+
+@media screen and (max-width: 500px){
+
+   .FormContainer{
+       padding-top: 3em;
+   }
+        
+    }
