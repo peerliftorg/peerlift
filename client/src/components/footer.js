@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import '../components/footer.css';
 import rocket from '../images/rocket@4x.png';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import SignUp from '../components/signup.js';
+
 
 
 
@@ -9,6 +11,8 @@ class Footer extends Component{
     render() {
         return (
         <div className = "Footer-wrapper">
+
+        <SignUp></SignUp>
 
         <div className = "Content-wrapper">
         <Link to="/"><img className = 'rocket' src={rocket} alt=""></img> </Link>

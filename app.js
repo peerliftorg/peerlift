@@ -22,10 +22,14 @@ app.use(bodyParser.json());
 //Set up my routes
 var usersRouter = require('./routes/scholarships');
 var summerRouter = require('./routes/summerprograms');
+var emailRouter = require('./routes/email');
+
 
 //Forward traffic to appropriate routers
 app.use('/api/scholarships', usersRouter);
 app.use('/api/summerprograms', summerRouter);
+app.use('/api/email', emailRouter);
+
 
     app.use(express.static('client/build'));
 
