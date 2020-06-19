@@ -34,7 +34,7 @@ class Home extends Component {
           <div className = "hero-box"> 
           <div className = "hero-title-sub"> 
               <div className = "hero-title"> 💯 Scholarships and summer programs. </div>
-              <div className = "hero-sub"> Your scholarship search, but human. Loved by 60,000 HS students.</div>
+              <div className = "hero-sub"> Your scholarship search, but human. Loved by 75,000 HS students.</div>
           </div>
             <div className = "hero-buttons">
                 <Link to="/scholarships" > <button className = "hero-button" id = "hero-scholarships">Scholarships</button> </Link>

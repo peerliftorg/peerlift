@@ -9,6 +9,8 @@ var logger = require('morgan');
 var cors = require('cors');
 //for body parser
 var bodyParser = require('body-parser');
+import { Mixpanel } from './mixpanel';
+
 
 var app = express();
 //using cors before setting up routes

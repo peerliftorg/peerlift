@@ -58,7 +58,6 @@ class Opps extends Component{
           //create date variables for each one
           var c = new Date(a.FilterDate);
           var d = new Date(b.FilterDate);
-
           var e = Math.abs(currDate-c);
           var f = Math.abs(currDate-d);
           return e-f;
@@ -278,7 +277,7 @@ class Opps extends Component{
             <MobileFilter onPress={() => this.handleClickFilters()}></MobileFilter>
 
           <div className = {this.state.filters ? "full-filter-clicked": "full-filter-wrapper"}> 
-            <div className = "header">Filter </div>
+            <div className = "filter-flex"> 
 
             <div className = "grade-wrapper">
             <div className = "title">Grade: </div>
@@ -312,6 +311,7 @@ class Opps extends Component{
             </div>
           
 
+          </div>
           </div>
     
             

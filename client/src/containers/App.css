@@ -15,11 +15,17 @@
 
 .filter-opp-wrapper{
     padding-top: 5vh;
+    display: flex;
+}
+
+.filter-flex{
+    position: sticky;
+    top: 0;
 }
 
 
 .add-box-wrapper{
-    margin-left: 20vw;
+    width: 100%;
 }
 
 @media screen and (max-width: 700px){
@@ -30,5 +36,6 @@
 
    .filter-opp-wrapper{
     padding-top: 0;
+    flex-direction: column;
 }
     }

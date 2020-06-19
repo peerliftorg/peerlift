@@ -36,7 +36,6 @@ class AddOpp extends Component{
             })
             })
             this.setState({copied: true});
-
     }
      
     render() {
