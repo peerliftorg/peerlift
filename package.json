@@ -5,13 +5,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "heroku-postbuild": "cd client && npm install && npm run build"
-
   },
-
   "engines": {
     "node": "10.x"
   },
-  
   "dependencies": {
     "aws-sdk": "latest",
     "body-parser": "latest",
@@ -20,8 +17,6 @@
     "debug": "~2.6.9",
     "ejs": "latest",
     "express": "latest",
-    "firebase": "^5.0.1",
-    "firebase-admin": "^5.12.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "mongodb": "^3.3.1",
