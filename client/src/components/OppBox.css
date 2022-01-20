@@ -1,134 +1,110 @@
-.OppBox{
+.OppBox {
   width: 42vw;
   border-radius: 6px;
   box-shadow: 0 4px 10px 0 rgba(173, 173, 173, 0.5);
   background-color: #ffffff;
   padding: 1.5em;
   margin-bottom: 2em;
-  outline:none;
+  outline: none;
   border: 0px;
   text-align: left;
   /* margin: 30vh; */
 }
 
-.Title{
-    font-weight: 900;
-    font-size: 24px;
-    padding-top: 2vh;
-
+.Title {
+  font-weight: 900;
+  font-size: 24px;
+  padding-top: 2vh;
 }
 
-.Tags{
-    display: flex;
-    padding-top: 1.5vh;
-    font-weight: 800px;
-    
-    
-
-
+.Tags {
+  display: flex;
+  padding-top: 1.5vh;
+  font-weight: 800px;
 }
 
-.Data{
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 800;
-    padding: 0.2em;
-    
+.Data {
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 0.2em;
 }
 
-#Amount{
-  background-color: rgb(255,109,150,0.3);
+#Amount {
+  background-color: rgb(255, 109, 150, 0.3);
   margin-right: 2vw;
   color: #ff6d96;
-
-
-
 }
 
-#Grade{
-background-color: rgb(234,186,4,0.3);
-color: #eaba04;
-
-
+#Grade {
+  background-color: rgb(234, 186, 4, 0.3);
+  color: #eaba04;
+  display: flex;
+  flex-direction: row;
 }
 
-.Deadline{
-color: #686868;
-font-size: 18px;
-padding-top: 1.5vh;
-
-
+.Deadline {
+  color: #686868;
+  font-size: 18px;
+  padding-top: 1.5vh;
 }
 
-.Tags{
+.Tags {
 }
 
-.Text{
-padding-top: 1.5vh;
+.Text {
+  padding-top: 1.5vh;
 
-color: #686868;
-font-size: 16px;
-text-overflow: ellipsis;
+  color: #686868;
+  font-size: 16px;
+  text-overflow: ellipsis;
   /* Required for text-overflow to do anything */
   white-space: nowrap;
   overflow: hidden;
-
-
 }
 
-.Cta{
-padding-top: 1vh;
-display: grid;
-font-size: 22px;
-grid-template-columns: [firstC] 5% [secondC] 45% [thirdC] 50%;
-grid-template-rows: [firstR] 100%;
-
-
+.Cta {
+  padding-top: 1vh;
+  display: grid;
+  font-size: 22px;
+  grid-template-columns: [firstC] 5% [secondC] 45% [thirdC] 50%;
+  grid-template-rows: [firstR] 100%;
 }
 
-.Share{
-padding-left: 0.7em;
-
+.Share {
+  padding-left: 0.7em;
 }
 
-.ShareButton{
-    height: 3.2vh;
+.ShareButton {
+  height: 3.2vh;
 }
 
-.Apply{
-    justify-self:right;
-    padding-right: 0.5em;
+.Apply {
+  justify-self: right;
+  padding-right: 0.5em;
 }
 
-a{
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
+  .OppBox {
+    width: 100%;
+    height: 40vh;
 
-    .OppBox{
-        width: 100%;
-        height: 40vh;
+    box-shadow: 0px 0px 0px 0px;
+    margin-bottom: 1em;
+  }
+}
 
-        box-shadow: 0px 0px 0px 0px;
-        margin-bottom: 1em;
-    }
-    
-        
-    }
+@media screen and (max-width: 500px) {
+  .OppBox {
+    width: 100%;
+    height: 100%;
+  }
 
-
-    @media screen and (max-width: 500px){
-
-        .OppBox{
-            width: 100%;
-            height: 100%;
-        }
-
-        .Apply{
- 
-        }
-        
-            
-        }
+  .Apply {
+  }
+}

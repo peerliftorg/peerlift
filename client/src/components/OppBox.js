@@ -1,40 +1,61 @@
-import React, {Component} from 'react'; 
-import '../components/OppBox.css';
-import { withRouter, Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import shareButton from '../images/share@2x.png';
+import React, { Component } from "react";
+import "../components/OppBox.css";
+import {
+  withRouter,
+  Link,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import shareButton from "../images/share@2x.png";
 
+const OppBox = ({
+  id,
+  title,
+  amount,
+  grade,
+  date,
+  link,
+  description,
+  onPress,
+  oppId,
+}) => {
+  return (
+    <div className="wrapper">
+      <button className="OppBox" onClick={onPress} oppId={id}>
+        <div className="Title"> {title}</div>
 
-const OppBox = ( {id, title, amount, grade, date, link, description, onPress, oppId} ) => {
+        <div className="Tags">
+          <div className="Data" id="Amount">
+            {" "}
+            {amount}
+          </div>
+          <div className="Data" id="Grade">
+            {/* {grade} */}
+            {/* https://stackoverflow.com/questions/23618744/rendering-comma-separated-list-of-links */}
+            {grade.map((year, i) => [
+              i > 0 && ", ",
+              <div className="GradeYears" key={i}>
+                {year}
+              </div>,
+            ])}
+          </div>
+        </div>
 
-  return(
+        <div className="Deadline">{date}</div>
+        <div className="Text"> {description} </div>
 
-    <div className = 'wrapper'>
-
-    <button className = "OppBox" onClick={onPress} oppId = {id}>
-    
-    <div  className = 'Title'> {title}</div>
-
-    <div className = 'Tags'> 
-            <div className = 'Data' id = 'Amount'> {amount}</div>
-            <div className = 'Data' id = 'Grade'>{grade}</div>
+        <div className="Cta">
+          <img className="ShareButton" src={shareButton} alt=""></img>
+          <div className="Share"> Share </div>
+          <a href={link} className="Apply" target="_blank">
+            {" "}
+            Apply{" "}
+          </a>
+        </div>
+      </button>
     </div>
-
-    <div className = 'Deadline'>{date}</div>
-    <div className = 'Text'> {description} </div>
-
-
-    <div className = 'Cta'> 
-            <img className = 'ShareButton' src={shareButton} alt=""></img>
-            <div className = 'Share'> Share </div>
-            <a href = {link} className = 'Apply' target="_blank"> Apply </a>
-            </div>
-
-    </button>
-    </div>
-  )
-}
+  );
+};
 
 export default OppBox;
-
-
-

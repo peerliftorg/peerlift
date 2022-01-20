@@ -50,7 +50,10 @@ if (process.env.NODE_ENV === "production") {
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(process.env.MONGODB)
+  .connect(
+    "mongodb+srv://peerlift:8oWYCczbM9tXuZfc@pl-connect-0azku.mongodb.net/peerlift?retryWrites=true&w=majority"
+  )
+  // .connect(process.env.MONGODB)
   .then(() => {
     console.log("Successfully connected to MongoDB Atlas!");
   })
