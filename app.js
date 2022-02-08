@@ -51,7 +51,10 @@ const mongoose = require("mongoose");
 
 mongoose
 
-  .connect(process.env.MONGODB)
+  // .connect(process.env.MONGODB)
+  .connect(
+    "mongodb+srv://peerlift:f9SOSujDFO3O7gIU@pl-connect-0azku.mongodb.net/peerlift?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("Successfully connected to MongoDB Atlas!");
   })
